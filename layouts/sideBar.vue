@@ -1,10 +1,10 @@
 <template>
   <section>
-    <div class="flex h-screen bg-gray-200">
+    <div class="flex h-screen">
       <!-- Sidebar -->
       <div
         :class="{ 'w-64': sideDrawer, 'w-16': !sideDrawer }"
-        class="bg-gray-800 text-white flex flex-col transition-all duration-300"
+        class="bg-Dark text-white flex flex-col transition-all duration-300"
       >
         <div class="flex items-center justify-center h-16">
           <button @click="toggleSideDrawer" class="focus:outline-none">
@@ -38,7 +38,9 @@
               <svg class="w-6 h-6">
                 <use :xlink:href="`#${menu.icon}`"></use>
               </svg>
-              <span v-if="sideDrawer" class="ml-2">{{ menu.title }}</span>
+              <span v-if="sideDrawer" class="ml-2 font-bold uppercase">{{
+                menu.title
+              }}</span>
             </nuxt-link>
           </li>
         </ul>
@@ -46,8 +48,10 @@
 
       <!-- Main Content -->
       <div class="flex-1">
-        <header class="bg-white shadow p-4 flex justify-between items-center">
-          <h1 class="text-xl font-bold">{{ title }}</h1>
+        <header
+          class="bg-Dark shadow text-Hijau p-4 flex justify-between items-center"
+        >
+          <h1 class="text-xl font-bold font-serif">{{ title }}</h1>
         </header>
         <main class="p-4">
           <Nuxt />
@@ -66,18 +70,18 @@ export default {
   data() {
     return {
       sideDrawer: false,
-      title: "Portal",
+      title: "Pine Residence",
       originalSideMenu: [
         { icon: "mdi-cog", title: "Setting Profile", to: "/profile" },
         {
           icon: "mdi-package-variant",
           title: "Setting Product",
-          to: "/product",
+          to: "/product/",
         },
         {
           icon: "mdi-account-cog",
           title: "Setting User",
-          to: "/users",
+          to: "/users/",
           middleware: ["admin"],
         },
       ],
