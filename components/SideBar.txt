@@ -1,0 +1,71 @@
+<template>
+  <div class="sidebar">
+    <!-- Sidebar Toggle Button -->
+    <button @click="toggleSidebar" class="sidebar-toggle-button">
+      <svg v-if="isOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+      </svg>
+      <svg v-else class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+
+    <!-- Sidebar Content -->
+    <div :class="{ hidden: !isOpen }" class="sidebar-content">
+      <ul>
+        <li v-for="(menuItem, index) in menuItems" :key="index" class="mb-2">
+          <nuxt-link :to="menuItem.route" class="flex items-center text-gray-300 hover:text-white">
+            <span class="mr-2">{{ menuItem.icon }}</span>
+            <span>{{ menuItem.title }}</span>
+          </nuxt-link>
+        </li>
+      </ul>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      isOpen: true, // Sidebar initial state
+      menuItems: [
+        // Menu items
+        { title: "Dashboard", icon: "📊", route: "/dashboard" },
+        { title: "Users", icon: "👥", route: "/users" },
+        { title: "Orders", icon: "🛒", route: "/orders" },
+        // Add more menu items as needed
+      ],
+    };
+  },
+  methods: {
+    toggleSidebar() {
+      this.isOpen = !this.isOpen;
+    },
+  },
+};
+</script>
+
+<style scoped>
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 200px; /* Sidebar width */
+  background-color: #333; /* Sidebar background color */
+}
+
+.sidebar-toggle-button {
+  position: absolute;
+  top: 10px;
+  left: 170px; /* Adjust the position */
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.sidebar-content {
+  padding-top: 40px; /* Adjust the padding to prevent overlapping with the toggle button */
+}
+</style>
