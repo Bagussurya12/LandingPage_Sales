@@ -1,21 +1,21 @@
 <template>
   <NuxtLayout :name="sideBar">
-    <section>
+    <section class="pt-10">
       <div class="flex justify-center">
         <div class="w-full max-w-lg">
-          <div class="bg-white shadow-md rounded-lg p-6">
-            <h2 class="text-2xl font-bold mb-4">Add User</h2>
+          <div class="bg-Dark shadow-md rounded-lg p-6">
+            <h2 class="text-2xl font-bold mb-4 text-white">Add User</h2>
             <form @submit.prevent="onSubmit">
               <div class="mb-4">
                 <label
-                  class="block text-gray-700 text-sm font-bold mb-2"
+                  class="block text-white text-sm font-bold mb-2"
                   for="fullname"
                   >Nama Lengkap</label
                 >
                 <input
                   v-model="form.fullname"
                   :class="{ 'border-red-500': errors.fullname }"
-                  class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  class="shadow appearance-none border rounded w-full py-2 px-3 text-Dark leading-tight focus:outline-none focus:shadow-outline"
                   type="text"
                   id="fullname"
                   placeholder="Nama Lengkap"
@@ -26,14 +26,32 @@
               </div>
               <div class="mb-4">
                 <label
-                  class="block text-gray-700 text-sm font-bold mb-2"
+                  class="block text-white text-sm font-bold mb-2"
+                  for="fullname"
+                  >Nick Name</label
+                >
+                <input
+                  v-model="form.nickName"
+                  :class="{ 'border-red-500': errors.nickName }"
+                  class="shadow appearance-none border rounded w-full py-2 px-3 text-Dark leading-tight focus:outline-none focus:shadow-outline"
+                  type="text"
+                  id="fullname"
+                  placeholder="Nick Name"
+                />
+                <p v-if="errors.nickName" class="text-red-500 text-xs italic">
+                  {{ errors.nickName }}
+                </p>
+              </div>
+              <div class="mb-4">
+                <label
+                  class="block text-white text-sm font-bold mb-2"
                   for="email"
                   >Email</label
                 >
                 <input
                   v-model="form.email"
                   :class="{ 'border-red-500': errors.email }"
-                  class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  class="shadow appearance-none border rounded w-full py-2 px-3 text-Dark leading-tight focus:outline-none focus:shadow-outline"
                   type="email"
                   id="email"
                   placeholder="Email"
@@ -45,35 +63,42 @@
               </div>
               <div class="mb-4">
                 <label
-                  class="block text-gray-700 text-sm font-bold mb-2"
-                  for="role"
+                  class="block text-white text-sm font-bold mb-2"
+                  for="level"
                   >Role</label
                 >
                 <select
-                  v-model="form.role"
-                  :class="{ 'border-red-500': errors.role }"
+                  v-model="form.level"
+                  :class="{ 'border-red-500': errors.level }"
                   class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  id="role"
+                  id="level"
                 >
-                  <option value="" disabled>Select Role</option>
-                  <option v-for="role in roles" :key="role" :value="role">
-                    {{ role }}
+                  <option value="" disabled class="text-Dark">
+                    Select Role
+                  </option>
+                  <option
+                    v-for="level in levels"
+                    :key="level"
+                    :value="level"
+                    class="text-Dark"
+                  >
+                    {{ level }}
                   </option>
                 </select>
-                <p v-if="errors.role" class="text-red-500 text-xs italic">
-                  {{ errors.role }}
+                <p v-if="errors.level" class="text-red-500 text-xs italic">
+                  {{ errors.level }}
                 </p>
               </div>
               <div class="mb-4">
                 <label
-                  class="block text-gray-700 text-sm font-bold mb-2"
+                  class="block text-white text-sm font-bold mb-2"
                   for="password"
                   >Kata Sandi</label
                 >
                 <input
                   v-model="form.password"
                   :class="{ 'border-red-500': errors.password }"
-                  class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  class="shadow appearance-none border rounded w-full py-2 px-3 text-Dark leading-tight focus:outline-none focus:shadow-outline"
                   type="password"
                   id="password"
                   placeholder="Kata Sandi"
@@ -84,14 +109,14 @@
               </div>
               <div class="mb-4">
                 <label
-                  class="block text-gray-700 text-sm font-bold mb-2"
+                  class="block text-white text-sm font-bold mb-2"
                   for="retype_password"
                   >Ulangi Kata Sandi</label
                 >
                 <input
                   v-model="form.retype_password"
                   :class="{ 'border-red-500': errors.retype_password }"
-                  class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  class="shadow appearance-none border rounded w-full py-2 px-3 text-Dark leading-tight focus:outline-none focus:shadow-outline"
                   type="password"
                   id="retype_password"
                   placeholder="Ulangi Kata Sandi"
@@ -106,7 +131,7 @@
               <div class="flex items-center justify-between">
                 <button
                   :disabled="isDisable"
-                  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                  class="bg-Hijau hover:bg-teal-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                   type="submit"
                 >
                   <span v-if="!isDisable">Simpan</span>
@@ -127,21 +152,24 @@ export default {
   data() {
     return {
       isDisable: false,
-      roles: ["Admin", "Staff"],
+      levels: ["Admin", "Staff"],
       emailExist: false,
+      nickNameExist: false,
       form: {
         fullname: "",
+        nickName: "",
         email: "",
         password: "",
         retype_password: "",
-        role: "",
+        level: "",
       },
       errors: {
         fullname: "",
+        nickName: "",
         email: "",
         password: "",
         retype_password: "",
-        role: "",
+        level: "",
       },
     };
   },
@@ -152,19 +180,32 @@ export default {
       // Reset emailExist to false if the email does not exist
       this.emailExist = false;
     },
+    checkNickNameExist() {
+      // Add your logic to check if the email exists
+      // Set emailExist to true if the email exists
+      // Reset emailExist to false if the email does not exist
+      this.nickNameExist = false;
+    },
     validateForm() {
       this.errors = {
         fullname: "",
+        nickName: "",
         email: "",
         password: "",
         retype_password: "",
-        role: "",
+        level: "",
       };
       let valid = true;
 
       if (!this.form.fullname) {
         this.errors.fullname = "Nama lengkap diperlukan.";
         valid = false;
+      }
+      if (!this.form.nickName) {
+        this.errors.nickName = "Nick Name diperlukan.";
+        valid = false;
+      } else if (this.nickNameExist) {
+        this.errors.nickName = "Nick Name Sudah Di Gunakan!";
       }
       if (!this.form.email) {
         this.errors.email = "Email diperlukan.";
@@ -190,8 +231,8 @@ export default {
         this.errors.retype_password = "Kata sandi tidak sama.";
         valid = false;
       }
-      if (!this.form.role) {
-        this.errors.role = "Peran diperlukan.";
+      if (!this.form.level) {
+        this.errors.level = "Peran diperlukan.";
         valid = false;
       }
       return valid;
@@ -200,7 +241,7 @@ export default {
       if (this.validateForm()) {
         this.isDisable = true;
         this.$axios
-          .$post("/users", this.form)
+          .$post("/Add-User", this.form)
           .then((response) => {
             this.isDisable = false;
             this.$router.push({

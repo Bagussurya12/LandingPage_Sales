@@ -84,6 +84,11 @@ export default {
           to: "/users/",
           middleware: ["admin"],
         },
+        {
+          icon: "mdi-account-cog",
+          title: "Log-Out",
+          to: "/logout",
+        },
       ],
     };
   },
