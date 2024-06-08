@@ -1,3 +1,5 @@
+import { jwtDecode } from "jwt-decode"; // Menggunakan impor default
+
 export const state = () => ({
   accessToken: null,
   refreshToken: null,

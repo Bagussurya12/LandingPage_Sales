@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div class="flex h-screen">
+    <div class="flex h-full">
       <!-- Sidebar -->
       <div
         :class="{ 'w-64': sideDrawer, 'w-16': !sideDrawer }"
@@ -72,17 +72,23 @@ export default {
       sideDrawer: false,
       title: "Pine Residence",
       originalSideMenu: [
-        { icon: "mdi-cog", title: "Setting Profile", to: "/profile" },
+        {
+          icon: "mdi-cog",
+          title: "Setting Profile",
+          to: "/profile",
+          middleware: ["Staff"],
+        },
         {
           icon: "mdi-package-variant",
           title: "Setting Product",
           to: "/product/",
+          middleware: ["Admin"],
         },
         {
           icon: "mdi-account-cog",
           title: "Setting User",
           to: "/users/",
-          middleware: ["admin"],
+          middleware: ["Admin"],
         },
         {
           icon: "mdi-account-cog",

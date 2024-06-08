@@ -3,9 +3,9 @@
     <section>
       <div class="container mx-auto my-3">
         <div
-          class="bg-primary text-white py-4 px-6 flex justify-between items-center"
+          class="bg-primary text-Dark py-4 px-2 flex justify-between items-center"
         >
-          <h1 class="text-3xl font-bold">Users Management</h1>
+          <h1 class="text-xl font-bold">Users Management</h1>
           <input
             v-model="search"
             class="rounded border border-gray-400 px-3 py-1"
