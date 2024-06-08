@@ -23,7 +23,7 @@
             </nav>
             <button
               @click="goToAddUser"
-              class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded"
+              class="bg-Hijau hover:bg-teal-950 text-white font-bold py-2 px-4 rounded"
             >
               Add User
             </button>
@@ -49,13 +49,13 @@
                 <td class="border px-4 py-2">
                   <button
                     @click="confirmDeleteUser(user)"
-                    class="bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-2 rounded mx-2 my-2"
+                    class="bg-red-700 hover:bg-red-950 text-white font-bold py-1 px-2 rounded mx-2 my-2"
                   >
                     Delete
                   </button>
                   <button
                     @click="editUser(user.id)"
-                    class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-2 rounded mx-2 my-2"
+                    class="bg-orange-700 hover:bg-orange-950 text-white font-bold py-1 px-2 rounded mx-2 my-2"
                   >
                     Edit
                   </button>
