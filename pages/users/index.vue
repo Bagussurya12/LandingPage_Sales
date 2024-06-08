@@ -198,7 +198,6 @@ export default {
         });
     },
     editUser(userId) {
-      console.log("Editing user with ID:", userId);
       this.$router.push(`/users/edit/${userId}`);
     },
     goToAddUser() {

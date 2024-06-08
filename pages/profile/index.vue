@@ -35,7 +35,7 @@
                 </p>
                 <p class="font-semibold text-Dark text-medium mb-5">
                   Untuk Mengubah Profile Klik
-                  <nuxt-link to="/pages/profile/edit/_id" class="font-bold"
+                  <nuxt-link :to="`/profile/edit/${userId}`" class="font-bold"
                     >Disini 👍</nuxt-link
                   >
                 </p>
@@ -124,6 +124,7 @@ export default {
     return {
       profile: {},
       nickName: "",
+      userId: "",
       photo: IbuImelda,
     };
   },
@@ -136,7 +137,12 @@ export default {
       const userId = user.id;
       const response = await $axios.$get(`/profile/${userId}`);
       const pengguna = await $axios.$get(`/users/${userId}`);
-      return { profile: response.profile, nickName: pengguna.user.nick_name };
+
+      return {
+        profile: response.profile,
+        nickName: pengguna.user.nick_name,
+        userId: pengguna.user.id,
+      };
     } catch (error) {
       console.error(error);
       return { profile: {} };
