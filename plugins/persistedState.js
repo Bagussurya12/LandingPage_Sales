@@ -14,20 +14,20 @@ export default ({ store, req }) => {
       getItem: (key) => {
         if (process.server) {
           const parsedCookies = cookie.parse(req.headers.cookie || "");
-          console.log("Get item from server cookie:", key, parsedCookies[key]);
+          // console.log("Get item from server cookie:", key, parsedCookies[key]);
           return parsedCookies[key];
         } else {
           const value = Cookies.get(key);
-          console.log("Get item from client cookie:", key, value);
+          // console.log("Get item from client cookie:", key, value);
           return value;
         }
       },
       setItem: (key, value) => {
-        console.log("Set item to cookie:", key, value);
+        // console.log("Set item to cookie:", key, value);
         return Cookies.set(key, value, { expires: 365, secure: false });
       },
       removeItem: (key) => {
-        console.log("Remove item from cookie:", key);
+        // console.log("Remove item from cookie:", key);
         return Cookies.remove(key);
       },
     },

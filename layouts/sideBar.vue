@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div class="flex h-full">
+    <div class="flex h-full min-h-screen">
       <!-- Sidebar -->
       <div
         :class="{ 'w-64': sideDrawer, 'w-16': !sideDrawer }"
