@@ -256,7 +256,7 @@
 </template>
 
 <script>
-import IbuImelda from "@/assets/images/Directors/ibu-imelda.jpg";
+import IbuImelda from "@/assets/images/News.png";
 
 export default {
   middleware: ["authenticated"],
