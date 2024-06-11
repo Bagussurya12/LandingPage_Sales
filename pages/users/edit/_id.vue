@@ -205,6 +205,7 @@
 
 <script>
 export default {
+  middleware: ["authenticated"],
   layout: "sideBar",
   asyncData({ params }) {
     return {

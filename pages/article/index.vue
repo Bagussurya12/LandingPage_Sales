@@ -17,7 +17,7 @@
             <nav class="flex">
               <ol class="list-none p-0">
                 <li class="inline-block">
-                  <a href="#" class="text-Dark font-bold text-4xl">Users</a>
+                  <a href="#" class="text-Dark font-bold text-4xl">Article</a>
                 </li>
               </ol>
             </nav>
@@ -25,7 +25,7 @@
               @click="goToAddArticle"
               class="bg-Hijau hover:bg-teal-950 text-white font-bold py-2 px-4 rounded"
             >
-              Add User
+              Add Article
             </button>
           </div>
           <table class="table-auto w-full my-4 border-b-4 rounded-xl">
@@ -35,6 +35,7 @@
                 <th class="px-4 py-2">Title</th>
                 <th class="px-4 py-2">Foto</th>
                 <th class="px-4 py-2">Content</th>
+                <th class="px-4 py-2">Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -164,10 +165,12 @@ export default {
       this.$axios
         .$get("/article")
         .then((response) => {
+          console.log(response);
           if (response.status) {
             this.articles = response.data;
           }
         })
+
         .catch((error) => {
           console.log(error);
         });
@@ -203,7 +206,7 @@ export default {
     },
   },
   mounted() {
-    this.fetchArticle;
+    this.fetchArticle();
   },
 };
 </script>
