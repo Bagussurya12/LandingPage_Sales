@@ -5,7 +5,9 @@
         <div class="flex justify-center">
           <div class="w-full md:w-full">
             <div class="bg-white">
-              <h2 class="text-Dark py-10 px-5 font-bold text-4xl">Edit User</h2>
+              <h2 class="text-Dark py-10 px-5 font-bold text-4xl">
+                Edit Media Sosial
+              </h2>
 
               <div class="text-black p-4 rounded-b-md">
                 <nav aria-label="breadcrumb" class="mb-4 text-Dark text-2xl">
