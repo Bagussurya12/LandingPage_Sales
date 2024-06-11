@@ -38,21 +38,20 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="(user, index) in filteredUsers" :key="index">
-                <td class="border px-4 py-2">{{ user.id }}</td>
-                <td class="border px-4 py-2">{{ user.fullname }}</td>
-                <td class="border px-4 py-2">{{ user.email }}</td>
-                <td class="border px-4 py-2">{{ user.nick_name }}</td>
-                <td class="border px-4 py-2">{{ user.level }}</td>
+              <tr v-for="(article, index) in filteredArticles" :key="index">
+                <td class="border px-4 py-2">{{ article.id }}</td>
+                <td class="border px-4 py-2">{{ article.title }}</td>
+                <td class="border px-4 py-2">{{ article.photos }}</td>
+                <td class="border px-4 py-2">{{ article.content }}</td>
                 <td class="border px-4 py-2">
                   <button
-                    @click="confirmDeleteUser(user)"
+                    @click="confirmDeleteArticle(article)"
                     class="bg-red-700 hover:bg-red-950 text-white font-bold py-1 px-2 rounded mx-2 my-2"
                   >
                     Delete
                   </button>
                   <button
-                    @click="editUser(user.id)"
+                    @click="editArticle(article.id)"
                     class="bg-orange-700 hover:bg-orange-950 text-white font-bold py-1 px-2 rounded mx-2 my-2"
                   >
                     Edit
@@ -104,7 +103,7 @@
                 </h3>
                 <div class="mt-2">
                   <p class="text-sm leading-5 text-gray-500">
-                    Are you sure you want to delete this user? This action
+                    Are you sure you want to delete this Article? This action
                     cannot be undone.
                   </p>
                 </div>
@@ -113,7 +112,7 @@
             <div class="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
               <span class="flex w-full rounded-md shadow-sm sm:ml-3 sm:w-auto">
                 <button
-                  @click="deleteUser(itemDelete.id)"
+                  @click="deleteArticle(itemDelete.id)"
                   type="button"
                   class="inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 bg-red-600 text-base leading-6 font-medium text-white shadow-sm hover:bg-red-500 focus:outline-none focus:border-red-700 focus:shadow-outline-red transition ease-in-out duration-150 sm:text-sm sm:leading-5"
                 >
@@ -154,7 +153,7 @@ export default {
     };
   },
   computed: {
-    filteredUsers() {
+    filteredArticles() {
       return this.articles.filter((article) =>
         article.title.toLowerCase().includes(this.search.toLowerCase())
       );

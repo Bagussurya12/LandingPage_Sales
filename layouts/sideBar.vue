@@ -76,12 +76,18 @@ export default {
           icon: "mdi-cog",
           title: "Setting Profile",
           to: "/profile",
-          middleware: ["Staff"],
+          middleware: ["Staff", "Admin"],
         },
         {
           icon: "mdi-package-variant",
           title: "Setting Product",
           to: "/product/",
+          middleware: ["Admin"],
+        },
+        {
+          icon: "mdi-package-variant",
+          title: "Setting Article",
+          to: "/article/",
           middleware: ["Admin"],
         },
         {
