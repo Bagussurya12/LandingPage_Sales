@@ -55,12 +55,12 @@
                   >
                     Delete
                   </button>
-                  <!-- <button
-                    @click="editProduct(product.id)"
-                    class="bg-orange-700 hover:bg-orange-950 text-white font-bold py-1 px-2 rounded mx-2 my-2"
+                  <button
+                    @click="getProductById(product.id)"
+                    class="bg-Hijau text-white font-bold py-1 px-2 rounded mx-2 my-2"
                   >
-                    Edit
-                  </button> -->
+                    Detail
+                  </button>
                 </td>
               </tr>
             </tbody>
@@ -165,7 +165,6 @@ export default {
       );
     },
   },
-
   methods: {
     fetchProduct() {
       this.$axios
@@ -202,8 +201,8 @@ export default {
           console.log(error);
         });
     },
-    editProduct(productId) {
-      this.$router.push(`/product/edit/${productId}`);
+    getProductById(productId) {
+      this.$router.push(`/product/view/${productId}`);
     },
     goToAddProduct() {
       this.$router.push("/product/create");
