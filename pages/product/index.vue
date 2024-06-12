@@ -3,9 +3,9 @@
     <section>
       <div class="container mx-auto my-3">
         <div
-          class="bg-primary text-Dark py-4 px-2 flex justify-between items-center"
+          class="bg-primary text-dark py-4 px-2 flex justify-between items-center"
         >
-          <h1 class="text-xl font-bold">Users Management</h1>
+          <h1 class="text-xl font-bold">Kelola Produk</h1>
           <input
             v-model="search"
             class="rounded border border-gray-400 px-3 py-1"
@@ -17,7 +17,7 @@
             <nav class="flex">
               <ol class="list-none p-0">
                 <li class="inline-block">
-                  <a href="#" class="text-Dark font-bold text-4xl">Product</a>
+                  <a href="#" class="text-dark font-bold text-4xl">Product</a>
                 </li>
               </ol>
             </nav>
@@ -37,15 +37,15 @@
                 <th class="px-4 py-2">Tipe</th>
                 <th class="px-4 py-2">Deskripsi</th>
                 <th class="px-4 py-2">Spesifikasi</th>
-                <th class="px-4 py-2">Aksi</th>
+                <th class="px-4 py-2">#</th>
               </tr>
             </thead>
             <tbody>
               <tr v-for="(product, index) in filteredProduct" :key="index">
                 <td class="border px-4 py-2">{{ product.id }}</td>
                 <td class="border px-4 py-2">{{ product.title }}</td>
-                <td class="border px-4 py-2">{{ product.tipe_rumah }}</td>
                 <td class="border px-4 py-2">{{ product.harga }}</td>
+                <td class="border px-4 py-2">{{ product.tipe_rumah }}</td>
                 <td class="border px-4 py-2">{{ product.deskripsi }}</td>
                 <td class="border px-4 py-2">{{ product.spesifikasi }}</td>
                 <td class="border px-4 py-2">
@@ -55,12 +55,12 @@
                   >
                     Delete
                   </button>
-                  <button
+                  <!-- <button
                     @click="editProduct(product.id)"
                     class="bg-orange-700 hover:bg-orange-950 text-white font-bold py-1 px-2 rounded mx-2 my-2"
                   >
                     Edit
-                  </button>
+                  </button> -->
                 </td>
               </tr>
             </tbody>
@@ -104,11 +104,11 @@
               </div>
               <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
                 <h3 class="text-lg leading-6 font-medium text-gray-900">
-                  Delete User
+                  Delete Product
                 </h3>
                 <div class="mt-2">
                   <p class="text-sm leading-5 text-gray-500">
-                    Are you sure you want to delete this user? This action
+                    Are you sure you want to delete this product? This action
                     cannot be undone.
                   </p>
                 </div>
@@ -117,7 +117,7 @@
             <div class="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
               <span class="flex w-full rounded-md shadow-sm sm:ml-3 sm:w-auto">
                 <button
-                  @click="deleteUser(itemDelete.id)"
+                  @click="deleteProduct(itemDelete.id)"
                   type="button"
                   class="inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 bg-red-600 text-base leading-6 font-medium text-white shadow-sm hover:bg-red-500 focus:outline-none focus:border-red-700 focus:shadow-outline-red transition ease-in-out duration-150 sm:text-sm sm:leading-5"
                 >
@@ -154,16 +154,18 @@ export default {
       dialogDelete: false,
       search: "",
       products: [],
-      // totalData: 0,
     };
   },
   computed: {
     filteredProduct() {
-      return this.products.filter((product) =>
-        product.title.toLowerCase().includes(this.search.toLowerCase())
+      return this.products.filter(
+        (product) =>
+          product.title &&
+          product.title.toLowerCase().includes(this.search.toLowerCase())
       );
     },
   },
+
   methods: {
     fetchProduct() {
       this.$axios
@@ -171,7 +173,6 @@ export default {
         .then((response) => {
           if (response.status) {
             this.products = response.products;
-            // this.totalData = response.total;
           }
           console.log(this.products);
         })
@@ -179,7 +180,7 @@ export default {
           console.log(error);
         });
     },
-    confirmDeleteUser(product) {
+    confirmDeleteProduct(product) {
       this.itemDelete = product;
       this.dialogDelete = true;
     },
@@ -195,14 +196,13 @@ export default {
           this.products = this.products.filter(
             (product) => product.id !== productId
           );
-          this.totalData -= 1;
           this.closeDelete();
         })
         .catch((error) => {
           console.log(error);
         });
     },
-    editUser(productId) {
+    editProduct(productId) {
       this.$router.push(`/product/edit/${productId}`);
     },
     goToAddProduct() {
