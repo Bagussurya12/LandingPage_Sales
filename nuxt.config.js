@@ -39,10 +39,15 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-    // https://go.nuxtjs.dev/axios
-    "@nuxtjs/axios",
-  ],
+  modules: ["@nuxtjs/axios", "@nuxtjs/i18n"],
+  i18n: {
+    langDir: "lang",
+    defaultLocale: "id",
+    locales: [
+      { code: "id", name: "indonesia", iso: "id-ID", file: "id.json" },
+      { code: "en", name: "english", iso: "en-EN", file: "en.json" },
+    ],
+  },
   router: {
     middleware: ["authenticated"], // Middleware yang akan diterapkan ke semua rute
   },

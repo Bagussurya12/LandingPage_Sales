@@ -29,6 +29,7 @@
               v-model="form.email"
               type="email"
               id="email"
+              :rules="rules.email"
               class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
               required
             />
@@ -41,6 +42,7 @@
               v-model="form.password"
               type="password"
               id="password"
+              :rules="rules.password"
               class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
               required
             />
@@ -55,7 +57,7 @@
           </button>
         </form>
         <div v-if="isError" class="mt-4 text-red-500">
-          {{ message }}
+          {{ $t(message) }}
         </div>
       </div>
     </div>
@@ -79,6 +81,20 @@ export default {
         email: "",
         password: "",
       },
+      rules: {
+        email: [
+          (v) => !!v || this.$t("FIELD_REQUIRED", { field: "EMAIL" }),
+          (v) =>
+            /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(v) ||
+            this.$t("EMAIL_INVALID"),
+        ],
+        password: [
+          (v) => !!v || this.$t("FIELD_REQUIRED", { field: "PASSWORD" }),
+          (v) =>
+            v.length >= 7 ||
+            this.$t("FIELD_MIN", { field: "PASSWORD", min: 7 }),
+        ],
+      },
     };
   },
   methods: {
@@ -100,7 +116,7 @@ export default {
         console.log("State after commit:", this.$store.state.auth); // Tambahkan ini
 
         this.isLoading = false;
-        this.$router.push("/dashboard");
+        this.$router.push({ name: "dashboard___" + this.$i18n.locale }); //Redirect To Home Page
       } catch (error) {
         this.isError = true;
         this.isDisable = false;

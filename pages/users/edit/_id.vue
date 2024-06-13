@@ -35,6 +35,7 @@
                         name="fullname"
                         type="text"
                         v-model="form.fullname"
+                        :rules="rules.fullname"
                         class="mt-1 my-5 h-10 block w-full border-2 border-black rounded-lg shadow-sm focus:border-Dark focus:ring pl-2"
                       />
                       <div
@@ -55,6 +56,7 @@
                         name="email"
                         type="email"
                         v-model="form.email"
+                        :rules="rules.email"
                         class="mt-1 h-10 block w-full border-2 border-black rounded-lg shadow-sm focus:border-Dark focus:ring pl-2"
                       />
                       <div
@@ -230,6 +232,26 @@ export default {
         password: "",
         retype_password: "",
       },
+      rules: {
+        fullname: [(v) => !!v || this.$t("FULLNAME_IS_REQUIRED")],
+        email: [
+          (v) => !!v || this.$t("EMAIL_IS_REQUIRED"),
+          (v) => /.+@.+/.test(v) || this.$t("EMAIL_INVALID"),
+          (v) => !this.emailExist || this.$t("EMAIL_EXIST"),
+        ],
+        password: [
+          (v) => v.length === 0 || !!v || this.$t("PASSWORD_REQUIRED"),
+          (v) =>
+            v.length === 0 ||
+            v.length >= 7 ||
+            this.$t("PASSWORD_MUST_BE_AT_LEAST_7_CHARACTER"),
+        ],
+        retype_password: [
+          (v) =>
+            v === this.form.password ||
+            this.$t("RE_PASSWORD_MUST_BE_SAME_WITH_PASSWORD"),
+        ],
+      },
     };
   },
   methods: {
@@ -245,7 +267,7 @@ export default {
         })
         .catch((error) => {
           this.$router.push({
-            name: "users___" + this.i18n.locale,
+            name: "users___" + this.$i18n.locale, // Changed this.i18n.locale to this.$i18n.locale
             params: { message: "ID_NOT_FOUND" },
           });
         });
@@ -273,7 +295,7 @@ export default {
           .then((response) => {
             this.isDisable = false;
             this.$router.push({
-              name: "users___" + this.i18n.locale,
+              name: "users___" + this.$i18n.locale,
               params: {
                 message: "UPDATE_SUCCESS",
                 fullname: this.form.fullname,
@@ -281,9 +303,18 @@ export default {
             });
           })
           .catch((error) => {
-            if (error.response.data.message === "EMAIL_EXIST") {
-              this.emailExist = true;
-              this.validateForm();
+            if (
+              error.response &&
+              error.response.data.message === "EMAIL_EXIST"
+            ) {
+              this.formErrors.email = "Email sudah ada.";
+            } else if (
+              error.response &&
+              error.response.data.message === "NICK_NAME_EXIST"
+            ) {
+              this.formErrors.nickName = "Nick Name Sudah Digunakan!";
+            } else {
+              console.error(error);
             }
             this.isDisable = false;
           });

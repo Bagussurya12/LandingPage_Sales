@@ -1,7 +1,7 @@
 // nuxt.config.js
 
 export default defineNuxtConfig({
-  modules: ["@nuxtjs/tailwindcss"],
+  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/i18n"],
   css: ["@/assets/css/tailwind.css"],
   postcss: {
     plugins: {

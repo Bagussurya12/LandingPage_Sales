@@ -18,6 +18,7 @@
                   class="shadow appearance-none border rounded w-full py-2 px-3 text-Dark leading-tight focus:outline-none focus:shadow-outline"
                   type="text"
                   id="fullname"
+                  :rules="rules.fullname"
                   placeholder="Nama Lengkap"
                 />
                 <p v-if="errors.fullname" class="text-red-500 text-xs italic">
@@ -27,7 +28,7 @@
               <div class="mb-4">
                 <label
                   class="block text-white text-sm font-bold mb-2"
-                  for="fullname"
+                  for="nickName"
                   >Nick Name</label
                 >
                 <input
@@ -35,7 +36,8 @@
                   :class="{ 'border-red-500': errors.nickName }"
                   class="shadow appearance-none border rounded w-full py-2 px-3 text-Dark leading-tight focus:outline-none focus:shadow-outline"
                   type="text"
-                  id="fullname"
+                  id="nickName"
+                  :rules="rules.nickName"
                   placeholder="Nick Name"
                 />
                 <p v-if="errors.nickName" class="text-red-500 text-xs italic">
@@ -54,6 +56,7 @@
                   class="shadow appearance-none border rounded w-full py-2 px-3 text-Dark leading-tight focus:outline-none focus:shadow-outline"
                   type="email"
                   id="email"
+                  :rules="rules.email"
                   placeholder="Email"
                   @blur="checkEmailExist"
                 />
@@ -72,6 +75,7 @@
                   :class="{ 'border-red-500': errors.level }"
                   class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   id="level"
+                  :rules="rules.level"
                 >
                   <option value="" disabled class="text-Dark">
                     Select Role
@@ -102,6 +106,7 @@
                   type="password"
                   id="password"
                   placeholder="Kata Sandi"
+                  :rules="rules.password"
                 />
                 <p v-if="errors.password" class="text-red-500 text-xs italic">
                   {{ errors.password }}
@@ -120,6 +125,7 @@
                   type="password"
                   id="retype_password"
                   placeholder="Ulangi Kata Sandi"
+                  :rules="rules.retype_password"
                 />
                 <p
                   v-if="errors.retype_password"
@@ -171,20 +177,32 @@ export default {
         retype_password: "",
         level: "",
       },
+      rules: {
+        fullname: [(v) => !!v || this.$t("FULLNAME_IS_REQUIRED")],
+        nickName: [(v) => !!v || this.$t("NICK_NAME_IS_REQUIRED")],
+        email: [
+          (v) => !!v || this.$t("EMAIL_IS_REQUIRED"),
+          (v) => !this.emailExist || this.$t("IS_EMAIL_EXIST"),
+          (v) => /.+@.+/.test(v) || this.$t("EMAIL_INVALID"),
+        ],
+        password: [
+          (v) => !!v || this.$t("PASSWORD_IS_REQUIRED"),
+          (v) =>
+            v.length >= 7 || this.$t("PASSWORD_MUST_BE_AT_LEAST_7_CHARACTER"),
+        ],
+        retype_password: [
+          (v) => !!v || this.$t("RETYPE_PASSWORD_IS_REQUIRED"),
+          (v) =>
+            v === this.form.password ||
+            this.$t("RE_PASSWORD_MUST_BE_SAME_WITH_PASSWORD"),
+        ],
+        level: [(v) => !!v || this.$t("ROLE_IS_REQUIRED")],
+      },
     };
   },
   methods: {
     checkEmailExist() {
-      // Add your logic to check if the email exists
-      // Set emailExist to true if the email exists
-      // Reset emailExist to false if the email does not exist
       this.emailExist = false;
-    },
-    checkNickNameExist() {
-      // Add your logic to check if the email exists
-      // Set emailExist to true if the email exists
-      // Reset emailExist to false if the email does not exist
-      this.nickNameExist = false;
     },
     validateForm() {
       this.errors = {
@@ -245,7 +263,7 @@ export default {
           .then((response) => {
             this.isDisable = false;
             this.$router.push({
-              name: "users",
+              name: "users___" + this.$i18n.locale,
               params: {
                 message: "CREATE_SUCCESS",
                 fullname: this.form.fullname,
@@ -253,9 +271,18 @@ export default {
             });
           })
           .catch((error) => {
-            if (error.response.data.message == "EMAIL_EXIST") {
+            if (
+              error.response &&
+              error.response.data.message === "EMAIL_ALREADY_EXIST"
+            ) {
               this.emailExist = true;
-              this.validateForm();
+              this.errors.email = "Email sudah ada.";
+            } else if (
+              error.response &&
+              error.response.data.message === "NICK_NAME_ALREADY_EXIST"
+            ) {
+              this.nickNameExist = true;
+              this.errors.nickName = "Nick Name Sudah Di Gunakan!";
             }
             this.isDisable = false;
           });
