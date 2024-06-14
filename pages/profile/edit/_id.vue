@@ -43,6 +43,7 @@
                         id="fullname"
                         name="fullname"
                         type="text"
+                        :rules="rules.fullName"
                         v-model="form.fullName"
                         class="mt-1 my-5 h-10 block w-full border-2 border-black rounded-lg shadow-sm focus:border-Dark focus:ring pl-2"
                       />
@@ -63,6 +64,7 @@
                         id="dateOfBirth"
                         name="dateOfBirth"
                         type="date"
+                        :rules="rules.dateOfBirth"
                         v-model="form.dateOfBirth"
                         class="mt-1 h-10 block w-full border-2 border-black rounded-lg shadow-sm focus:border-Dark focus:ring pl-2"
                       />
@@ -85,6 +87,7 @@
                       <select
                         id="gender"
                         name="gender"
+                        :rules="rules.gender"
                         v-model="form.gender"
                         class="mt-1 h-10 block w-full border-2 border-black rounded-lg shadow-sm focus:border-Dark focus:ring pl-2"
                       >
@@ -114,6 +117,7 @@
                         id="address"
                         name="address"
                         type="text"
+                        :rules="rules.address"
                         v-model="form.address"
                         class="mt-1 h-10 block w-full border-2 border-black rounded-lg shadow-sm focus:border-Dark focus:ring pl-2"
                       />
@@ -136,6 +140,7 @@
                         id="bio"
                         name="bio"
                         type="text"
+                        :rules="rules.bio"
                         v-model="form.bio"
                         class="mt-1 h-10 block w-full border-2 border-black rounded-lg shadow-sm focus:border-Dark focus:ring pl-2"
                       />
@@ -237,6 +242,13 @@ export default {
         photos: "",
         bio: "",
       },
+      rules: {
+        fullName: [(v) => !!v || this.$t("FULLNAME_IS_REQUIRED")],
+        dateOfBirth: [(v) => !!v || this.$t("DATE_OF_BIRTH_IS_REQUIRED")],
+        gender: [(v) => !!v || this.$t("GENDER_IS_REQUIRED")],
+        address: [(v) => !!v || this.$t("ADDRESS_IS_REQUIRED")],
+        bio: [(v) => !!v || this.$t("BIO_IS_REQUIRED")],
+      },
     };
   },
   methods: {
@@ -310,9 +322,10 @@ export default {
             this.isDisable = false;
             console.log(response.data);
             this.$router.push({
-              name: "profile___" + this.i18n.locale,
+              name: "profile___" + this.$i18n.locale,
               params: {
-                message: "UPDATE_SUCCESS",
+                message: "CREATE_SUCCESS",
+                fullname: this.form.fullname,
               },
             });
           })

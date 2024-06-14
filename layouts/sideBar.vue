@@ -19,7 +19,7 @@
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                stroke-width="2"
+                stroke-width="4"
                 d="M19 9l-7 7-7-7"
               ></path>
             </svg>
@@ -29,15 +29,15 @@
           <li
             v-for="(menu, index) in filteredSideMenu"
             :key="index"
-            class="group"
+            class="group px-4 py-4"
           >
-            <nuxt-link
-              :to="menu.to"
-              class="flex items-center p-2 hover:bg-gray-700"
-            >
-              <svg class="w-6 h-6">
-                <use :xlink:href="`#${menu.icon}`"></use>
-              </svg>
+            <nuxt-link :to="menu.to" class="flex items-center">
+              <img
+                v-if="menu.icon"
+                :src="require(`@/assets/images/admin/${menu.icon}`)"
+                :alt="menu.title"
+                class="w-6 h-6 mr-2"
+              />
               <span v-if="sideDrawer" class="ml-2 font-bold uppercase">{{
                 menu.title
               }}</span>
@@ -48,11 +48,6 @@
 
       <!-- Main Content -->
       <div class="flex-1">
-        <header
-          class="bg-Dark shadow text-Hijau p-4 flex justify-between items-center"
-        >
-          <h1 class="text-xl font-bold font-serif">{{ title }}</h1>
-        </header>
         <main class="p-4">
           <Nuxt />
         </main>
@@ -73,31 +68,31 @@ export default {
       title: "Pine Residence",
       originalSideMenu: [
         {
-          icon: "mdi-cog",
+          icon: "Profile.png",
           title: "Setting Profile",
           to: "/profile",
           middleware: ["Staff", "Admin"],
         },
         {
-          icon: "mdi-package-variant",
+          icon: "Product.png",
           title: "Setting Product",
           to: "/product/",
           middleware: ["Admin"],
         },
         {
-          icon: "mdi-package-variant",
+          icon: "Article.png",
           title: "Setting Article",
           to: "/article/",
           middleware: ["Admin"],
         },
         {
-          icon: "mdi-account-cog",
+          icon: "User.png",
           title: "Setting User",
           to: "/users/",
           middleware: ["Admin"],
         },
         {
-          icon: "mdi-account-cog",
+          icon: "Logout.png",
           title: "Log-Out",
           to: "/logout",
         },

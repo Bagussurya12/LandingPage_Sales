@@ -1,12 +1,10 @@
 <template>
-  <NuxtLayout name="sideBar">
+  <NuxtLayout>
     <section class="pt-1 pb-32 py-10">
       <div class="container mx-auto">
         <div class="flex justify-center">
           <div class="w-full md:w-full">
             <div class="bg-white">
-              <h2 class="text-Dark py-10 px-5 font-bold text-4xl">Edit User</h2>
-
               <div class="text-black p-4 rounded-b-md">
                 <nav aria-label="breadcrumb" class="mb-4 text-Dark text-2xl">
                   <ol
@@ -35,7 +33,6 @@
                         name="title"
                         type="text"
                         v-model="form.title"
-                        required
                         class="mt-1 my-5 h-10 block w-full border-2 border-black rounded-lg shadow-sm focus:border-Dark focus:ring pl-2"
                       />
                       <div
@@ -66,6 +63,7 @@
                       </div>
                     </div>
                   </div>
+                  <!-- Luas Tanah dan Luas Bangunan -->
                   <div class="mb-4 flex flex-wrap md:flex-nowrap md:space-x-4">
                     <div class="w-full md:w-1/2 mb-4 md:mb-0 flex flex-col">
                       <label
@@ -109,12 +107,15 @@
                         {{ formErrors.luas_bangunan }}
                       </div>
                     </div>
+                  </div>
+                  <!-- Jumlah Kamar Tidur dan Jumlah Kamar Mandi -->
+                  <div class="mb-4 flex flex-wrap md:flex-nowrap md:space-x-4">
                     <div class="w-full md:w-1/2 mb-4 md:mb-0 flex flex-col">
                       <label
                         class="block text-xl font-medium text-Dark mb-2"
                         for="jumlah_kamar_tidur"
-                        >Jumlah Kamar Tidur
-                      </label>
+                        >Jumlah Kamar Tidur</label
+                      >
                       <input
                         id="jumlah_kamar_tidur"
                         name="jumlah_kamar_tidur"
@@ -152,18 +153,19 @@
                       </div>
                     </div>
                   </div>
+                  <!-- Deskripsi dan Spesifikasi -->
                   <div class="mb-4 flex flex-wrap md:flex-nowrap md:space-x-4">
                     <div class="w-full md:w-1/2 flex flex-col">
                       <label
                         class="block text-xl font-medium text-gray-700 mb-2"
-                        for="Deskripsi"
+                        for="deskripsi"
                         >Deskripsi</label
                       >
                       <textarea
                         id="deskripsi"
                         name="deskripsi"
                         v-model="form.deskripsi"
-                        class="mt-1 block w-full border-2 border-black rounded-lg shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                        class="mt-1 block w-full border-2 border-black rounded-lg shadow-sm focus:border-Dark focus:ring"
                         rows="5"
                         placeholder="Masukan Deskripsi Produk"
                       ></textarea>
@@ -184,9 +186,9 @@
                         id="spesifikasi"
                         name="spesifikasi"
                         v-model="form.spesifikasi"
-                        class="mt-1 block w-full border-2 border-black rounded-lg shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                        class="mt-1 block w-full border-2 border-black rounded-lg shadow-sm focus:border-Dark focus:ring"
                         rows="5"
-                        placeholder="Masukan spesifikasi Produk"
+                        placeholder="Masukan Spesifikasi Produk"
                       ></textarea>
                       <div
                         v-if="formErrors.spesifikasi"
@@ -196,6 +198,7 @@
                       </div>
                     </div>
                   </div>
+                  <!-- Foto Produk -->
                   <div class="mb-4 flex flex-wrap md:flex-nowrap md:space-x-4">
                     <div class="w-full flex flex-col">
                       <label
@@ -216,7 +219,6 @@
                           accept="image/jpeg, image/png"
                           class="block w-full text-lg text-gray-700 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-bold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
                         />
-
                         <div
                           v-if="formErrors.photos && formErrors.photos[index]"
                           class="text-red-500 text-sm mt-1"
@@ -233,6 +235,7 @@
                       </button>
                     </div>
                   </div>
+                  <!-- Tombol Simpan -->
                   <div class="flex justify-end mt-10">
                     <button
                       type="submit"
@@ -301,7 +304,7 @@ export default {
     onFileChange(event, index) {
       this.$set(this.form.photos, index, event.target.files[0]); // Set file at specific index
     },
-    async validateForm() {
+    validateForm() {
       this.formErrors = {};
       if (!this.form.title) {
         this.formErrors.title = "Title is required";
@@ -309,16 +312,27 @@ export default {
       if (!this.form.harga) {
         this.formErrors.harga = "Harga is required";
       }
+      if (!this.form.luas_tanah) {
+        this.formErrors.luas_tanah = "Luas tanah is required";
+      }
+      if (!this.form.luas_bangunan) {
+        this.formErrors.luas_bangunan = "Luas bangunan is required";
+      }
+      if (!this.form.jumlah_kamar_tidur) {
+        this.formErrors.jumlah_kamar_tidur = "Jumlah kamar tidur is required";
+      }
+      if (!this.form.jumlah_kamar_mandi) {
+        this.formErrors.jumlah_kamar_mandi = "Jumlah kamar mandi is required";
+      }
+      if (!this.form.deskripsi) {
+        this.formErrors.deskripsi = "Deskripsi is required";
+      }
+      if (!this.form.spesifikasi) {
+        this.formErrors.spesifikasi = "Spesifikasi is required";
+      }
       // Validate other fields...
 
-      // Create a new FormData object
-      const formData = new FormData();
-
-      // Append files to the FormData object
-      this.form.photos.forEach((photo, index) => {
-        formData.append("photos", photo);
-      });
-
+      // Log validation errors
       console.log("Validation errors:", this.formErrors);
 
       // Return validation result
@@ -345,7 +359,9 @@ export default {
 
       // Append photos correctly
       this.form.photos.forEach((photo, index) => {
-        formData.append("photos", photo); // Use 'photos' as the field name
+        if (photo) {
+          formData.append("photos", photo); // Use 'photos' as the field name
+        }
       });
 
       this.isSubmitting = true;
@@ -357,8 +373,13 @@ export default {
             "Content-Type": "multipart/form-data",
           },
         });
-        console.log("Data sent successfully:", response);
-        this.$router.push({ name: "product" });
+        this.$router.push({
+          name: "product___" + this.$i18n.locale,
+          params: {
+            message: "CREATE_SUCCESS",
+            fullname: this.form.fullname,
+          },
+        });
       } catch (error) {
         console.error("Error sending data:", error);
         this.isSubmitting = false;

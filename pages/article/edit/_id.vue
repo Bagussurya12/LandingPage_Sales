@@ -106,21 +106,25 @@
 export default {
   middleware: ["authenticated"],
   layout: "sideBar",
-  asyncData({ params }) {
-    return {
-      id: params.id,
-    };
+  async asyncData({ params, $axios }) {
+    try {
+      const { data } = await $axios.get(`/article/${params.id}`);
+      return {
+        form: {
+          title: data.title,
+          photos: null,
+          content: data.content,
+        },
+        existingPhoto: data.photos,
+      };
+    } catch (error) {
+      return { form: {}, existingPhoto: null };
+    }
   },
   data() {
     return {
       isSubmitting: false,
       formErrors: {},
-      form: {
-        title: "",
-        photos: null,
-        content: "",
-      },
-      existingPhoto: null,
     };
   },
   methods: {
@@ -154,38 +158,23 @@ export default {
       this.isSubmitting = true;
 
       try {
-        const response = await this.$axios.put(
-          `/article/${this.id}`,
-          formData,
-          {
-            headers: {
-              "Content-Type": "multipart/form-data",
-            },
-          }
-        );
-        this.$router.push({ name: "article" });
+        await this.$axios.put(`/article/${this.$route.params.id}`, formData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        });
+        this.$router.push({
+          name: "article___" + this.$i18n.locale,
+          params: {
+            message: "CREATE_SUCCESS",
+            title: this.form.title,
+          },
+        });
       } catch (error) {
         console.error(error);
         this.isSubmitting = false;
       }
     },
-    async fetchArticleById() {
-      try {
-        const response = await this.$axios.$get(`/article/${this.id}`);
-        const articleData = response.data;
-        this.form.title = articleData.title;
-        this.existingPhoto = articleData.photos;
-        this.form.content = articleData.content;
-      } catch (error) {
-        this.$router.push({
-          name: "article",
-          params: { message: "ID_NOT_FOUND" },
-        });
-      }
-    },
-  },
-  mounted() {
-    this.fetchArticleById();
   },
 };
 </script>

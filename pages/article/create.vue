@@ -15,6 +15,7 @@
               name="title"
               type="text"
               v-model="form.title"
+              :rules="rules.title"
               class="mt-1 block h-10 my-5 py-5 w-full border-2 border-gray-300 rounded-lg shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
             />
             <div v-if="formErrors.title" class="text-red-500 text-sm mt-1">
@@ -33,6 +34,7 @@
               name="photos"
               type="file"
               @change="onFileChange"
+              :rules="rules.photos"
               accept="image/jpeg, image/png"
               class="block w-full text-lg text-gray-700 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-bold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
             />
@@ -51,6 +53,7 @@
               id="content"
               name="content"
               v-model="form.content"
+              :rules="rules.content"
               class="mt-1 block w-full border-2 border-gray-300 rounded-lg shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
               rows="5"
             ></textarea>
@@ -107,6 +110,11 @@ export default {
         title: "",
         photos: null,
         content: "",
+      },
+      rules: {
+        title: [(v) => !!v || this.$t("TITLE_IS_REQUIRED")],
+        photos: [(v) => !!v || this.$t("photos_IS_REQUIRED")],
+        content: [(v) => !!v || this.$t("content_IS_REQUIRED")],
       },
     };
   },

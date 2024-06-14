@@ -44,6 +44,7 @@
                         name="linkedin"
                         type="text"
                         v-model="form.linkedin"
+                        :rules="rules.linkedin"
                         class="mt-1 my-5 h-10 block w-full border-2 border-black rounded-lg shadow-sm focus:border-Dark focus:ring pl-2"
                       />
                       <div
@@ -63,6 +64,7 @@
                         id="instagram"
                         name="instagram"
                         type="text"
+                        :rules="rules.instagram"
                         v-model="form.instagram"
                         class="mt-1 h-10 block w-full border-2 border-black rounded-lg shadow-sm focus:border-Dark focus:ring pl-2"
                       />
@@ -86,6 +88,7 @@
                         id="facebook"
                         name="facebook"
                         type="text"
+                        :rules="rules.facebook"
                         v-model="form.facebook"
                         class="mt-1 h-10 block w-full border-2 border-black rounded-lg shadow-sm focus:border-Dark focus:ring pl-2"
                       />
@@ -106,6 +109,7 @@
                         id="youtube"
                         name="youtube"
                         type="text"
+                        :rules="rules.youtube"
                         v-model="form.youtube"
                         class="mt-1 h-10 block w-full border-2 border-black rounded-lg shadow-sm focus:border-Dark focus:ring pl-2"
                       />
@@ -128,6 +132,7 @@
                         id="twitter"
                         name="twitter"
                         type="text"
+                        :rules="rules.twitter"
                         v-model="form.twitter"
                         class="mt-1 h-10 block w-full border-2 border-black rounded-lg shadow-sm focus:border-Dark focus:ring pl-2"
                       />
@@ -203,6 +208,13 @@ export default {
         twitter: "",
         facebook: "",
       },
+      rules: {
+        linkedin: [(v) => !!v || this.$t("LINKEDIN_IS_REQUIRED")],
+        instagram: [(v) => !!v || this.$t("INSTAGRAM_IS_REQUIRED")],
+        facebook: [(v) => !!v || this.$t("FACEBOOK_IS_REQUIRED")],
+        twitter: [(v) => !!v || this.$t("TWITTER_IS_REQUIRED")],
+        youtube: [(v) => !!v || this.$t("YOUTUBE_IS_REQUIRED")],
+      },
     };
   },
   methods: {
@@ -248,9 +260,9 @@ export default {
           .then((response) => {
             this.isDisable = false;
             this.$router.push({
-              name: "profile___" + this.i18n.locale,
+              name: "profile___" + this.$i18n.locale,
               params: {
-                message: "UPDATE_SUCCESS",
+                message: "CREATE_SUCCESS",
               },
             });
           })
