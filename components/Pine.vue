@@ -11,7 +11,7 @@
           <h1
             class="font-semibold text-gray-800 text-4xl font-serif text-center"
           >
-            A Home That Defines Your Lifestyle
+            AVAILABLE UNITS
           </h1>
         </div>
       </div>
@@ -19,7 +19,7 @@
       <div class="flex flex-wrap justify-center relative z-10">
         <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-10">
           <div
-            class="bg-white rounded-xl shadow-lg overflow-hidden relative transition-transform transform hover:scale-105"
+            class="bg-white rounded-xl shadow-xl overflow-hidden relative transition-transform transform hover:scale-105"
           >
             <img
               src="../assets/images/virginia-pine.jpg"
@@ -49,7 +49,7 @@
         <!--  -->
         <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-10">
           <div
-            class="bg-white rounded-xl shadow-lg overflow-hidden relative transition-transform transform hover:scale-105"
+            class="bg-white rounded-xl shadow-xl overflow-hidden relative transition-transform transform hover:scale-105"
           >
             <img
               src="../assets/images/northern-pine.jpg"
