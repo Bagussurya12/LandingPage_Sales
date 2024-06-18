@@ -1,6 +1,6 @@
 <template>
   <header
-    class="bg-Dark fixed top-0 left-0 w-full flex items-center z-50 py-2 font-sans"
+    class="bg-transparent fixed top-0 left-0 w-full flex items-center z-50 py-2 font-montserrat"
   >
     <div class="container mx-auto px-4">
       <div class="flex items-center justify-between relative w-full">
@@ -37,48 +37,41 @@
         <!-- Navbar menu for all screens -->
         <nav
           id="navbar-menu"
-          class="hidden lg:flex items-center w-full lg:w-auto bg-opacity-0 absolute top-0 right-0"
+          class="hidden lg:flex items-center w-full lg:w-auto bg-opacity-0 absolute top-0 right-0 mt-2"
         >
           <ul class="block lg:flex lg:space-x-4">
             <li class="group">
               <a
                 href="/"
-                class="text-base text-white font-bold py-2 mx-2 lg:mx-4 flex group-hover:text-Hijau"
+                class="text-base text-white font-semibold py-2 mx-2 lg:mx-4 flex group-hover:text-Hijau"
                 >Home</a
               >
             </li>
             <li class="group">
               <a
                 href="/contact"
-                class="text-base text-white font-bold py-2 mx-2 lg:mx-4 flex group-hover:text-Hijau"
+                class="text-base text-white font-semibold py-2 mx-2 lg:mx-4 flex group-hover:text-Hijau"
                 >Contact Us</a
               >
             </li>
             <li class="group">
               <a
                 href="/location"
-                class="text-base text-white font-bold py-2 mx-2 lg:mx-4 flex group-hover:text-Hijau"
+                class="text-base text-white font-semibold py-2 mx-2 lg:mx-4 flex group-hover:text-Hijau"
                 >Location</a
               >
             </li>
             <li class="group">
               <a
-                href="/about"
-                class="text-base text-white font-bold py-2 mx-2 lg:mx-4 flex group-hover:text-Hijau"
-                >About Us</a
-              >
-            </li>
-            <li class="group">
-              <a
                 href="/galery"
-                class="text-base text-white font-bold py-2 mx-2 lg:mx-4 flex group-hover:text-Hijau"
+                class="text-base text-white font-semibold py-2 mx-2 lg:mx-4 flex group-hover:text-Hijau"
                 >Gallery</a
               >
             </li>
             <li class="group">
               <a
                 href="/news"
-                class="text-base text-white font-bold py-2 mx-2 lg:mx-4 flex group-hover:text-Hijau"
+                class="text-base text-white font-semibold py-2 mx-2 lg:mx-4 flex group-hover:text-Hijau"
                 >News</a
               >
             </li>
@@ -183,7 +176,7 @@ export default {
     transition: backdrop-filter 0.3s, background-color 0.3s; /* Add smooth transition for the glass effect */
   }
   .logo {
-    width: 40px;
+    width: 50px;
   }
 }
 </style>

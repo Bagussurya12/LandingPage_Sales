@@ -1,15 +1,32 @@
 <template>
-  <section id="master" class="relative m-0 p-0 w-full h-screen overflow-hidden pt-16">
+  <section
+    id="master"
+    class="relative m-0 p-0 w-full h-screen overflow-hidden -mt-16"
+  >
     <div class="m-0 p-0 w-full h-full flex relative">
-      <img ref="masterImage" src="../assets/images/master.jpg" alt="Master Image" class="m-0 p-0 w-full h-full object-cover zoom-effect" />
+      <img
+        ref="masterImage"
+        src="../assets/images/master.jpg"
+        alt="Master Image"
+        class="m-0 p-0 w-full h-full object-cover zoom-effect"
+      />
       <!-- Overlay -->
-      <div class="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
+      <div
+        class="absolute top-0 left-0 w-full h-full bg-black opacity-50"
+      ></div>
       <!-- Text Content -->
-      <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center text-white">
+      <div
+        class="absolute top-0 left-0 w-full h-full flex items-center justify-center text-white"
+      >
         <div class="text-center">
           <h1 class="text-4xl md:text-8xl font-bold">OCBD</h1>
-          <h3 class="text-xl md:text-2xl mb-4 font-serif">A Metropolis Sanctuary</h3>
-          <p class="text-md md:text-xl max-w-[600px]">One Central Business District (OCBD) is an exclusive business area integrated with residential, business, and commercial zones.</p>
+          <h3 class="text-xl md:text-2xl mb-4 font-serif">
+            A Metropolis Sanctuary
+          </h3>
+          <p class="text-md md:text-xl max-w-[600px]">
+            One Central Business District (OCBD) is an exclusive business area
+            integrated with residential, business, and commercial zones.
+          </p>
         </div>
       </div>
     </div>

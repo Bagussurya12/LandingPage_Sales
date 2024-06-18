@@ -1,8 +1,7 @@
 <template>
-  <section>
+  <section class="font-montserrat">
     <Navbar></Navbar>
     <Master></Master>
-    <TextMaster></TextMaster>
     <Pine></Pine>
     <Facilities></Facilities>
     <Carousel></Carousel>

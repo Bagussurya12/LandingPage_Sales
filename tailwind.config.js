@@ -16,6 +16,9 @@ module.exports = {
         Dark: "#0f172a",
         Pucat: "#64748b",
       },
+      fontFamily: {
+        montserrat: ["Montserrat", "sans-serif"],
+      },
     },
   },
   variants: {

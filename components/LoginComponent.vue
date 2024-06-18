@@ -15,7 +15,7 @@
           class="w-32 h-32 mb-4"
         />
         <h1 class="text-2xl font-bold text-Hijau mb-2">Have A Nice Day 🤞</h1>
-        <p class="text-gray-200">Enjoy your time here</p>
+        <p class="text-gray-200">Enjoy Your Time Here</p>
       </div>
       <!-- Right Section (Login Form) -->
       <div
