@@ -1,5 +1,5 @@
 <template>
-  <section id="pine" class="pt-20 pb-32 bg-white px-10">
+  <section id="pine" class="pt-20 pb-24 bg-white px-10">
     <div class="container mx-auto relative">
       <div class="flex flex-wrap justify-center mb-10">
         <div class="w-full px-4 mb-5 flex flex-col justify-center items-center">

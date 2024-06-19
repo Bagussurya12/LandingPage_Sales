@@ -1,6 +1,6 @@
 <template>
   <section
-    class="fixed bottom-12 right-0 mb-4 mr-4 w-auto h-auto flex items-center justify-center font-montserrat bg-transparent"
+    class="fixed bottom-12 right-0 mb-4 mr-4 w-auto flex items-center justify-center z-50 font-montserrat bg-transparent"
   >
     <div class="container mx-auto">
       <div class="shrink-0 flex items-center bg-Dark rounded-lg p-2">

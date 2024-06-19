@@ -4,6 +4,7 @@
     <Master></Master>
     <WhatsAppChat></WhatsAppChat>
     <Pine></Pine>
+    <PageContactMain></PageContactMain>
     <Facilities></Facilities>
     <Carousel></Carousel>
     <Location></Location>
@@ -12,6 +13,7 @@
 </template>
 
 <script>
+import PageContactMain from "../components/PageContactMain.vue";
 import WhatsAppChat from "../components/WhatsAppChat.vue";
 
 export default {
