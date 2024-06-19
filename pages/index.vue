@@ -4,10 +4,10 @@
     <Master></Master>
     <WhatsAppChat></WhatsAppChat>
     <Pine></Pine>
-    <PageContactMain></PageContactMain>
     <Facilities></Facilities>
-    <Carousel></Carousel>
-    <Location></Location>
+    <PageContactMain id="contact"></PageContactMain>
+    <Carousel id="galeri"></Carousel>
+    <Location id="lokasi"></Location>
     <Footer></Footer>
   </section>
 </template>

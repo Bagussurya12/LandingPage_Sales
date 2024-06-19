@@ -7,10 +7,12 @@
     />
     <div class="container mx-auto px-4 py-4 mt-5">
       <div class="max-w-2xl mx-auto text-center mb-5">
-        <h1 class="font-bold text-3xl font-serif text-Dark mb-5">
+        <h1 class="font-bold text-3xl font-Montserrat text-Dark mb-5">
           THE FIRST RESIDENTIAL DISTRICT THE BEST LOCATION IN BOGOR CITY
         </h1>
-        <h2 class="font-semibold text-Pucat text-lg mb-4 sm:text-xl lg:text-xl">
+        <h2
+          class="font-semibold text-Pucat font-Montserrat text-lg mb-4 sm:text-xl lg:text-xl"
+        >
           Facilities
         </h2>
       </div>

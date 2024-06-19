@@ -1,11 +1,11 @@
 <template>
-  <section id="contact" class="pt-24 pb-32 mx-10 px-10">
-    <div class="container mx-auto bg-Dark p-2 rounded-3xl">
+  <section id="contact" class="pt-24 pb-24 px-10 bg-Dark">
+    <div class="container mx-auto p-2 rounded-3xl">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
         <!-- Mengubah grid-cols-1 menjadi grid-cols-2 -->
-        <div class="px-4 lg:mb-0 mt-20 ml-10">
+        <div class="px-4 lg:mb-0 -mt-20">
           <h4
-            class="text-white font-semibold lg:text-6xl md:text-4xl sm:text-2xl mb-2"
+            class="text-white font-semibold lg:text-6xl md:text-4xl sm:text-2xl mb-2 mt-10"
           >
             Contact Us for More Information!🖐
           </h4>
@@ -108,10 +108,10 @@
             </li>
           </ul>
         </div>
-        <div class="px-4 my-10 lg:my-0 md:my-10">
+        <div class="px-4">
           <!-- Menambahkan class lg:my-0 untuk menghapus margin pada mode desktop -->
           <div
-            class="aspect-w-12 aspect-h-12 overflow-hidden my-10 items-center flex justify-end"
+            class="aspect-w-12 aspect-h-12 overflow-hidden m-auto items-center flex justify-center"
           >
             <!-- FORM -->
             <section action="" class="">
@@ -131,9 +131,6 @@
                   </a>
                 </div>
               </div>
-              <div
-                class="w-full lg:w-auto lg:mx-auto mx-10 mt-10 justify-center"
-              ></div>
             </section>
           </div>
         </div>

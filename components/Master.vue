@@ -1,8 +1,5 @@
 <template>
-  <section
-    id="master"
-    class="relative m-0 p-0 w-full h-screen overflow-hidden -mt-16"
-  >
+  <section id="master" class="relative m-0 p-0 w-full h-screen overflow-hidden">
     <div class="m-0 p-0 w-full h-full flex relative">
       <img
         ref="masterImage"
@@ -27,6 +24,9 @@
             One Central Business District (OCBD) is an exclusive business area
             integrated with residential, business, and commercial zones.
           </p>
+          <a class="hover:font-bold" href="https://ocbd.co.id/" target="_blank">
+            See More...</a
+          >
         </div>
       </div>
     </div>

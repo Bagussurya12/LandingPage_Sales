@@ -1,7 +1,12 @@
 <template>
-  <section class="pb-16 bg-white px-20">
+  <section class="pb-16 bg-white px-20 pt-20">
     <div class="container mx-auto">
       <div class="w-full text-center">
+        <div class="max-w-2xl mx-auto text-center mb-10">
+          <h1 class="font-Montserrat font-bold text-4xl text-Dark mb-5">
+            GALLERY
+          </h1>
+        </div>
         <div class="relative w-full overflow-hidden">
           <div
             class="flex transition-transform duration-700"

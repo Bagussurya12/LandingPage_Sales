@@ -8,7 +8,7 @@
           <h3
             class="text-Hijau font-bold lg:text-8xl md:text-6xl sm:text-6xl mb-10"
           >
-            Location
+            Lokasi
           </h3>
           <h4
             class="text-white font-semibold lg:text-4xl md:text-2xl sm:text-xl mb-2"

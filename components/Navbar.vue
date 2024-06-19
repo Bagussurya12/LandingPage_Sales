@@ -1,6 +1,6 @@
 <template>
   <header
-    class="bg-transparent fixed top-0 left-0 w-full flex items-center z-50 py-2 font-montserrat"
+    class="bg-Dark fixed top-0 left-0 w-full flex items-center z-50 py-2 font-montserrat"
   >
     <div class="container mx-auto px-4">
       <div class="flex items-center justify-between relative w-full">
@@ -42,37 +42,30 @@
           <ul class="block lg:flex lg:space-x-4">
             <li class="group">
               <a
-                href="/"
+                href="#"
                 class="text-base text-white font-semibold py-2 mx-2 lg:mx-4 flex group-hover:text-Hijau"
                 >Home</a
               >
             </li>
             <li class="group">
               <a
-                href="/contact"
+                href="#contact"
                 class="text-base text-white font-semibold py-2 mx-2 lg:mx-4 flex group-hover:text-Hijau"
                 >Contact Us</a
               >
             </li>
             <li class="group">
               <a
-                href="/location"
+                href="#lokasi"
                 class="text-base text-white font-semibold py-2 mx-2 lg:mx-4 flex group-hover:text-Hijau"
-                >Location</a
+                >Lokasi</a
               >
             </li>
             <li class="group">
               <a
-                href="/galery"
+                href="#galeri"
                 class="text-base text-white font-semibold py-2 mx-2 lg:mx-4 flex group-hover:text-Hijau"
                 >Gallery</a
-              >
-            </li>
-            <li class="group">
-              <a
-                href="/news"
-                class="text-base text-white font-semibold py-2 mx-2 lg:mx-4 flex group-hover:text-Hijau"
-                >News</a
               >
             </li>
           </ul>
