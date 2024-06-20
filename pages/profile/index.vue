@@ -25,6 +25,22 @@
                   {{ profile.bio }}
                 </p>
               </div>
+              <div class="flex justify-center text-center mb-6 mt-10">
+                <p
+                  class="max-w-[800px] font-Montserrat text-Dark font-bold text-xl mt-2"
+                >
+                  https://pineresidence.co.id/{{ nickName }}
+                </p>
+                <button
+                  @click="
+                    copyToClipboard(`https://pineresidence.co.id/${nickName}`)
+                  "
+                  class="mx-5 bg-Dark rounded-lg text-white py-2 px-5"
+                >
+                  Copy URL
+                </button>
+              </div>
+              <div class="w-full pt-10 border-t border-slate-700"></div>
               <form ref="form" @submit.prevent="onSubmit" class="mt-20">
                 <h2 class="font-bold mt-10 mb-2 text-Dark text-2xl">
                   Profile Saya
@@ -291,6 +307,16 @@ export default {
     }
   },
   methods: {
+    copyToClipboard(url) {
+      navigator.clipboard
+        .writeText(url)
+        .then(() => {
+          alert("URL copied to clipboard!");
+        })
+        .catch((err) => {
+          console.error("Could not copy text: ", err);
+        });
+    },
     formattedDate(date) {
       const options = { year: "numeric", month: "long", day: "numeric" };
       return new Date(date).toLocaleDateString(undefined, options);
