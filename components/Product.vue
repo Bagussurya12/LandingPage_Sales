@@ -44,11 +44,12 @@
                 <p class="font-medium font-serif text-base text-gray-900 mb-4">
                   {{ product.deskripsi }}
                 </p>
-                <a
-                  href="#"
-                  class="font-medium text-sm bg-Hijau py-2 px-4 rounded-lg hover:bg-teal-900 text-white"
-                  >Brochure</a
+                <button
+                  @click="getProductById(product.id)"
+                  class="bg-Hijau text-white font-bold py-1 px-2 rounded mx-2 my-2"
                 >
+                  Brochure
+                </button>
               </div>
             </div>
           </div>
@@ -76,6 +77,9 @@ export default {
         .catch((error) => {
           console.error("Error fetching products:", error);
         });
+    },
+    getProductById(productId) {
+      this.$router.push(`/details/${productId}`);
     },
   },
   mounted() {

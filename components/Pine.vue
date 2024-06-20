@@ -84,18 +84,7 @@
 export default {
   data() {
     return {
-      currentIndex: 0,
-      form: {
-        pictures: [],
-        title: "",
-        harga: "",
-        luas_tanah: "",
-        luas_bangunan: "",
-        jumlah_kamar_tidur: "",
-        jumlah_kamar_mandi: "",
-        deskripsi: "",
-        spesifikasi: "",
-      },
+      products: [],
     };
   },
   methods: {
