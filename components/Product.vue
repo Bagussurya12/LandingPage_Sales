@@ -31,7 +31,7 @@
                   require(`../../Backend/public/images/${product.gambar[0].gambar_url}`)
                 "
                 alt="product image"
-                class="w-full h-full object-cover rounded-xl"
+                class="w-full h-64 object-cover rounded-xl"
               />
             </div>
 
@@ -42,13 +42,13 @@
                   {{ product.title }}
                 </h3>
                 <p class="font-medium font-serif text-base text-gray-900 mb-4">
-                  {{ product.deskripsi }}
+                  {{ truncateDescription(product.deskripsi, 120) }}
                 </p>
                 <button
                   @click="getProductById(product.id)"
-                  class="bg-Hijau text-white font-bold py-1 px-2 rounded mx-2 my-2"
+                  class="bg-Dark text-white font-base py-1 px-2 rounded mx-2 my-2"
                 >
-                  Brochure
+                  Lihat Detail
                 </button>
               </div>
             </div>
@@ -80,6 +80,12 @@ export default {
     },
     getProductById(productId) {
       this.$router.push(`/details/${productId}`);
+    },
+    truncateDescription(text, maxLength) {
+      if (text.length <= maxLength) {
+        return text;
+      }
+      return text.substring(0, maxLength) + "...";
     },
   },
   mounted() {

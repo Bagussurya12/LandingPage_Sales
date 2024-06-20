@@ -3,7 +3,7 @@
     <Navbar></Navbar>
     <Master></Master>
     <WhatsAppChat></WhatsAppChat>
-    <Pine></Pine>
+    <Product></Product>
     <Facilities></Facilities>
     <PageContactMain id="contact"></PageContactMain>
     <Carousel id="galeri"></Carousel>
