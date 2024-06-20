@@ -80,32 +80,47 @@
   </section>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      currentIndex: 0,
+      form: {
+        pictures: [],
+        title: "",
+        harga: "",
+        luas_tanah: "",
+        luas_bangunan: "",
+        jumlah_kamar_tidur: "",
+        jumlah_kamar_mandi: "",
+        deskripsi: "",
+        spesifikasi: "",
+      },
+    };
+  },
+  methods: {
+    fetchProduct() {
+      this.$axios
+        .$get("/product")
+        .then((response) => {
+          if (response.status) {
+            this.products = response.products;
+          }
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+  },
+  mounted() {
+    this.fetchProduct();
+  },
+};
+</script>
+
 <style scoped>
 /* Tambahkan gaya tambahan di sini jika diperlukan */
-.bg-gray-100 {
-  background-color: #f7fafc;
-}
-
-.bg-gray-800 {
-  background-color: #2d3748;
-}
-
-.bg-gray-900 {
-  background-color: #1a202c;
-}
-
-.text-gray-600 {
-  color: #718096;
-}
-
-.text-gray-800 {
-  color: #2d3748;
-}
-
-.text-gray-900 {
-  color: #1a202c;
-}
-
 .transition-transform {
   transition: transform 0.3s ease-in-out;
 }

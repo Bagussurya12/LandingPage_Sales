@@ -102,7 +102,7 @@ export default {
         })
         .catch((error) => {
           this.$router.push({
-            name: "profile___" + this.i18n.locale,
+            name: "product___" + this.i18n.locale,
             params: { message: "ID_NOT_FOUND" },
           });
         });
