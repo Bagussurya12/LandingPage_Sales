@@ -111,7 +111,7 @@
                         type="text"
                         v-model="form.nickName"
                         class="mt-1 h-10 block w-full border-2 border-black rounded-lg shadow-sm focus:border-Dark focus:ring pl-2"
-                        placeholder="Masukan nickName"
+                        placeholder="Masukan Nick Name"
                       />
                       <div
                         v-if="formErrors.nickName"
@@ -234,6 +234,10 @@ export default {
       },
       rules: {
         fullname: [(v) => !!v || this.$t("FULLNAME_IS_REQUIRED")],
+        nickName: [
+          (v) => !!v || this.$t("NICKNAME_IS_REQUIRED"),
+          (v) => /^[a-z0-9._]+$/.test(v) || this.$t("NICKNAME_INVALID"),
+        ],
         email: [
           (v) => !!v || this.$t("EMAIL_IS_REQUIRED"),
           (v) => /.+@.+/.test(v) || this.$t("EMAIL_INVALID"),

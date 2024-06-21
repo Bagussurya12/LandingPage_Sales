@@ -25,7 +25,7 @@
             </svg>
           </button>
         </div>
-        <ul class="flex-1">
+        <ul class="flex-1 font-montserrat">
           <li
             v-for="(menu, index) in filteredSideMenu"
             :key="index"
@@ -38,9 +38,11 @@
                 :alt="menu.title"
                 class="w-6 h-6 mr-2"
               />
-              <span v-if="sideDrawer" class="ml-2 font-bold uppercase">{{
-                menu.title
-              }}</span>
+              <span
+                v-if="sideDrawer"
+                class="ml-2 font-bold uppercase font-montserrat"
+                >{{ menu.title }}</span
+              >
             </nuxt-link>
           </li>
         </ul>
@@ -77,12 +79,6 @@ export default {
           icon: "Product.png",
           title: "Setting Product",
           to: "/product/",
-          middleware: ["Admin"],
-        },
-        {
-          icon: "Article.png",
-          title: "Setting Article",
-          to: "/article/",
           middleware: ["Admin"],
         },
         {

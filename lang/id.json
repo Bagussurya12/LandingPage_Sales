@@ -33,5 +33,6 @@
   "JUMLAH_KAMAR_TIDUR_IS_REQUIRED": "Jumlah Kamar Tidur Harus Di Isi",
   "JUMLAH_KAMAR_MANDI__IS_REQUIRED": "Jumlah Kamar Mandi Harus Di Isi",
   "DESKRIPSI_IS_REQUIRED": "Deskripsi Harus Di Isi",
-  "SPESIFIKASI_IS_REQUIRED": "Spesifikasi Harus Di Isi"
+  "SPESIFIKASI_IS_REQUIRED": "Spesifikasi Harus Di Isi",
+  "NICKNAME_INVALID": "Nick Name Tidak valid, Hanya boleh menggunakan huruf kecil angka, dots (.), dan undescore (__)"
 }
