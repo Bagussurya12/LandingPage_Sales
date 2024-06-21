@@ -3,7 +3,7 @@
     <div class="container mx-auto">
       <div class="w-full text-center">
         <div class="max-w-2xl mx-auto text-center mb-10">
-          <h1 class="font-Montserrat font-bold text-4xl text-Dark mb-5">
+          <h1 class="font-montserrat font-bold text-4xl text-Dark mb-5">
             GALLERY
           </h1>
         </div>

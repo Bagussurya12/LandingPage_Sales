@@ -1,22 +1,23 @@
 <template>
-  <footer class="bg-Dark pt-24 pb-12 px-10">
+  <footer class="bg-Dark pt-24 pb-12 px-10 font-montserrat">
     <div class="container mx-auto">
       <div class="flex flex-wrap">
         <div class="w-full px-4 mb-12 text-slate-300 font-medium md:w-1/3">
-          <h1 class="font-bold text-4xl text-Hijau font-serif">
+          <h1 class="font-bold text-4xl text-Hijau font-montserrat">
             Pine Residence
           </h1>
           <p class="mb-5">By OCBD</p>
-          <h3 class="font-bold text-2xl mb-2">Contact Us</h3>
           <p>Pine.residence@ocbd.co.id</p>
-          <p class="font-mono">
+          <p class="font-montserrat">
             Jln.Kaum Sari Kelurahan Cibuluh Kec.Bogor Utara
           </p>
-          <p class="font-mono">Kota Bogor, Jawa-Barat Indonesia</p>
+          <p class="font-montserrat">Kota Bogor, Jawa-Barat Indonesia</p>
         </div>
         <div class="w-full px-4 mb-12 md:w-1/3">
-          <h3 class="font-semibold text-xl text-white mb-5">Tautan</h3>
-          <ul class="text-slate-300">
+          <h3 class="font-semibold text-xl text-white mb-5 font-montserrat">
+            Tautan
+          </h3>
+          <ul class="text-slate-300 font-montserrat">
             <li>
               <a
                 href="#"
@@ -49,7 +50,9 @@
         </div>
         <!-- SOSMED -->
         <div class="w-full px-4 mb-12 md:w-1/3">
-          <h3 class="font-semibold text-xl text-white mb-5 text-center">
+          <h3
+            class="font-semibold text-xl text-white mb-5 text-center font-montserrat"
+          >
             Social Media
           </h3>
           <ul class="flex items-center justify-center mb-5">
@@ -146,7 +149,9 @@
       </div>
       <div class="w-full pt-10 border-t border-slate-700">
         <div class="flex items-center justify-center mb-5"></div>
-        <p class="text-lg font-semibold text-slate-500 text-center">
+        <p
+          class="text-lg font-semibold text-slate-500 text-center font-montserrat"
+        >
           Copy Right &copy;
           <a
             href="https://ocbd.co.id/"

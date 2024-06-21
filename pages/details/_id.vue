@@ -2,7 +2,7 @@
   <section>
     <Navbar class="mb-40"></Navbar>
     <WhatsAppChat></WhatsAppChat>
-    <section class="pb-16 bg-white px-4 md:px-20 mt-32">
+    <section class="pb-16 bg-white px-4 md:px-20 mt-10">
       <div class="container mx-auto flex flex-col md:flex-row py-20">
         <!-- Carousel Wrapper -->
         <div class="w-full md:w-1/3 overflow-hidden mx-auto">
@@ -13,7 +13,7 @@
             <div
               v-for="(picture, index) in form.pictures"
               :key="index"
-              class="min-w-full h-1/3 relative"
+              class="min-w-full h-auto relative"
             >
               <img
                 :src="
@@ -39,25 +39,27 @@
         </div>
         <!-- Other content can be placed here -->
         <div
-          class="w-full md:w-2/3 md:mt-0 md:pl-8 text-start md:text-left mt-10"
+          class="w-full md:w-2/3 md:mt-0 md:pl-8 text-start md:text-left mt-10 font-montserrat"
         >
-          <h1 class="text-3xl font-bold mb-10 mt-5">{{ form.title }}</h1>
-          <p class="text-xl mb-2">Harga: {{ form.harga }}</p>
-          <p class="text-xl mb-2">
+          <h1 class="text-3xl font-bold mb-10 mt-5 font-montserrat">
+            {{ form.title }}
+          </h1>
+          <p class="text-xl mb-2 font-montserrat">Harga: {{ form.harga }}</p>
+          <p class="text-xl mb-2 font-montserrat">
             Luas Tanah: {{ form.luas_tanah }} m² | Luas Bangunan:
             {{ form.luas_bangunan }} m²
           </p>
-          <p class="text-xl mb-10">
-            Jumlah Kamar Mandi: {{ form.jumlah_kamar_mandi }} | Jumlah Kamar
-            Tidur: {{ form.jumlah_kamar_tidur }}
+          <p class="text-xl mb-10 font-montserrat">
+            Kamar Mandi: {{ form.jumlah_kamar_mandi }} | Kamar Tidur:
+            {{ form.jumlah_kamar_tidur }}
           </p>
-          <p class="font-bold">Spesifikasi:</p>
-          <p class="text-xl mb-10">{{ form.spesifikasi }}</p>
-          <p class="font-bold">Deskripsi:</p>
-          <p class="text-xl mb-20">{{ form.deskripsi }}</p>
+          <p class="font-bold font-montserrat">Spesifikasi:</p>
+          <p class="text-xl mb-10 font-montserrat">{{ form.spesifikasi }}</p>
+          <p class="font-bold font-montserrat">Deskripsi:</p>
+          <p class="text-xl mb-10 font-montserrat">{{ form.deskripsi }}</p>
           <div class="text-start">
             <a
-              class="bg-Dark text-white py-2 px-4 w-[400px] pt-30 rounded-md transition-colors duration-300"
+              class="bg-Dark text-white py-2 px-4 w-[400px] pt-30 rounded-md transition-colors duration-300 font-montserrat"
               href="https://api.whatsapp.com/send/?phone=628119999331&text=Brochure%21%0D%0A%0D%0ASaya+mendapatkan+informasi+terkait+%2APerumahan+Pine+Residence+di+OCBD+Bogor%2A+dengan+Cicilan+6+Juta-an+melalui+situs+web+https%3A%2F%2Focbd.co.id%2F+.+Bisakah+Anda+memberikan+informasi+lebih+lanjut+%3F%0D%0A%0D%0ATerima+kasih.&type=phone_number&app_absent=0"
               target="_blank"
             >

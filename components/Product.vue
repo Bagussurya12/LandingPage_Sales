@@ -9,7 +9,7 @@
             class="max-w-[320px] mb-2"
           />
           <h1
-            class="font-semibold text-gray-800 text-4xl font-serif text-center"
+            class="font-semibold text-gray-800 text-2xl font-Montserrat text-center"
           >
             AVAILABLE UNITS
           </h1>
@@ -20,7 +20,7 @@
         <div
           v-for="product in products"
           :key="product.id"
-          class="w-full md:w-1/2 lg:w-1/3 px-4 mb-10"
+          class="w-full md:w-1/2 lg:w-1/3 px-4 mb-10 mx-20"
         >
           <div
             class="bg-white rounded-xl shadow-xl overflow-hidden relative transition-transform transform hover:scale-105"
@@ -38,15 +38,19 @@
             <!-- TEXT PRODUCT -->
             <div class="p-4 bg-white bg-opacity-90 backdrop-blur-md">
               <div class="text-center py-4 px-6">
-                <h3 class="font-bold text-2xl text-gray-900 mb-2 font-serif">
+                <h3
+                  class="font-bold text-2xl text-gray-900 mb-2 font-Montserrat"
+                >
                   {{ product.title }}
                 </h3>
-                <p class="font-medium font-serif text-base text-gray-900 mb-4">
+                <p
+                  class="font-medium font-Montserrat text-base text-gray-900 mb-4"
+                >
                   {{ truncateDescription(product.deskripsi, 120) }}
                 </p>
                 <button
                   @click="getProductById(product.id)"
-                  class="bg-Dark text-white font-base py-1 px-2 rounded mx-2 my-2"
+                  class="bg-Dark text-white font-Montserrat py-1 px-2 rounded mx-2 my-2"
                 >
                   Lihat Detail
                 </button>

@@ -4,10 +4,12 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
         <!-- Mengubah grid-cols-1 menjadi grid-cols-2 -->
         <div class="px-4 lg:mb-0 -mt-20 mx-auto">
-          <h4 class="text-white font-semibold text-2xl mb-2 mt-10">
+          <h4
+            class="text-white font-semibold font-montserrat text-2xl mb-2 mt-10"
+          >
             Hubungi Kami Untuk Info Lebih Lanjut!🖐
           </h4>
-          <p class="text-white text-lg">
+          <p class="text-white text-lg font-montserrat">
             Jika Anda memiliki pertanyaan atau memerlukan informasi lebih
             lanjut, jangan ragu untuk menghubungi kami. Tim layanan pelanggan
             kami siap membantu Anda. Hubungi kami melalui telepon, email, atau
@@ -122,7 +124,7 @@
                 />
                 <div class="flex justify-center mt-10">
                   <a
-                    class="bg-Hijau rounded-lg p-5 font-semibold"
+                    class="bg-Hijau rounded-lg p-5 font-semibold font-montserrat text-white"
                     href="https://api.whatsapp.com/send/?phone=628119999331&text=Brochure%21%0D%0A%0D%0ASaya+mendapatkan+informasi+terkait+%2APerumahan+Pine+Residence+di+OCBD+Bogor%2A+dengan+Cicilan+6+Juta-an+melalui+situs+web+https%3A%2F%2Focbd.co.id%2F+.+Bisakah+Anda+memberikan+informasi+lebih+lanjut+%3F%0D%0A%0D%0ATerima+kasih.&type=phone_number&app_absent=0"
                     target="_blank"
                   >
