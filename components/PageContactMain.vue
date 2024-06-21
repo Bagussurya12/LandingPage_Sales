@@ -3,16 +3,15 @@
     <div class="container mx-auto p-2 rounded-3xl">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
         <!-- Mengubah grid-cols-1 menjadi grid-cols-2 -->
-        <div class="px-4 lg:mb-0 -mt-20">
-          <h4
-            class="text-white font-semibold lg:text-6xl md:text-4xl sm:text-2xl mb-2 mt-10"
-          >
-            Contact Us for More Information!🖐
+        <div class="px-4 lg:mb-0 -mt-20 mx-auto">
+          <h4 class="text-white font-semibold text-2xl mb-2 mt-10">
+            Hubungi Kami Untuk Info Lebih Lanjut!🖐
           </h4>
           <p class="text-white text-lg">
-            If you have any questions or need further information, please do not
-            hesitate to contact us. Our customer service team is ready to assist
-            you. Reach us by phone, email, or through the form on this page.
+            Jika Anda memiliki pertanyaan atau memerlukan informasi lebih
+            lanjut, jangan ragu untuk menghubungi kami. Tim layanan pelanggan
+            kami siap membantu Anda. Hubungi kami melalui telepon, email, atau
+            whatsapp pada halaman ini.
           </p>
           <p class="text-white font-bold text-xl mt-5">
             <a href="" class="hover:text-Hijau">Pine.residence@ocbd.co.id</a>

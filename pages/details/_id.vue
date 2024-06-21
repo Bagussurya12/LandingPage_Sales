@@ -2,7 +2,7 @@
   <section>
     <Navbar class="mb-40"></Navbar>
     <WhatsAppChat></WhatsAppChat>
-    <section class="pb-16 bg-white px-4 md:px-20 mt-40">
+    <section class="pb-16 bg-white px-4 md:px-20 mt-32">
       <div class="container mx-auto flex flex-col md:flex-row py-20">
         <!-- Carousel Wrapper -->
         <div class="w-full md:w-1/3 overflow-hidden mx-auto">
@@ -13,7 +13,7 @@
             <div
               v-for="(picture, index) in form.pictures"
               :key="index"
-              class="min-w-full h-50 relative"
+              class="min-w-full h-1/3 relative"
             >
               <img
                 :src="
@@ -55,13 +55,14 @@
           <p class="text-xl mb-10">{{ form.spesifikasi }}</p>
           <p class="font-bold">Deskripsi:</p>
           <p class="text-xl mb-20">{{ form.deskripsi }}</p>
-          <div class="text-center">
-            <button
+          <div class="text-start">
+            <a
               class="bg-Dark text-white py-2 px-4 w-[400px] pt-30 rounded-md transition-colors duration-300"
-              @click="beliSekarang"
+              href="https://api.whatsapp.com/send/?phone=628119999331&text=Brochure%21%0D%0A%0D%0ASaya+mendapatkan+informasi+terkait+%2APerumahan+Pine+Residence+di+OCBD+Bogor%2A+dengan+Cicilan+6+Juta-an+melalui+situs+web+https%3A%2F%2Focbd.co.id%2F+.+Bisakah+Anda+memberikan+informasi+lebih+lanjut+%3F%0D%0A%0D%0ATerima+kasih.&type=phone_number&app_absent=0"
+              target="_blank"
             >
-              Beli Sekarang
-            </button>
+              Booking Sekarang & Dapatkan Promo Menarik!
+            </a>
           </div>
         </div>
       </div>

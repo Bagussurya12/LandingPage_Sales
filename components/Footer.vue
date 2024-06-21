@@ -19,44 +19,30 @@
           <ul class="text-slate-300">
             <li>
               <a
-                href="/"
+                href="#"
                 class="inline-block text-base text-white hover:text-Hijau"
-                >Home</a
+                >Beranda</a
               >
             </li>
             <li>
               <a
-                href="/contact"
+                href="#contact"
                 class="inline-block text-base text-white hover:text-Hijau"
-                >Contact Us</a
+                >Kontak</a
               >
             </li>
             <li>
               <a
-                href="/location"
+                href="#lokasi"
                 class="inline-block text-base text-white hover:text-Hijau"
-                >Location</a
+                >Lokasi</a
               >
             </li>
             <li>
               <a
-                href="/about"
+                href="#galeri"
                 class="inline-block text-base text-white hover:text-Hijau"
-                >About Us</a
-              >
-            </li>
-            <li>
-              <a
-                href="/gallery"
-                class="inline-block text-base text-white hover:text-Hijau"
-                >Gallery</a
-              >
-            </li>
-            <li>
-              <a
-                href="/news"
-                class="inline-block text-base text-white hover:text-Hijau"
-                >News</a
+                >Galeri</a
               >
             </li>
           </ul>

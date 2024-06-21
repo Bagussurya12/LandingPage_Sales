@@ -20,7 +20,7 @@
               <img
                 :src="image"
                 alt=""
-                class="w-full h-[800px] object-cover rounded-xl"
+                class="w-full h-[600px] object-cover rounded-xl"
               />
               <div
                 class="absolute top-0 left-0 w-full h-full bg-black opacity-50 rounded-xl"
