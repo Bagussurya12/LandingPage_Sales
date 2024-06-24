@@ -1,25 +1,19 @@
 <template>
   <section>
     <Navbar></Navbar>
-    <Master></Master>
+    <Master id="#"></Master>
     <TextMaster></TextMaster>
-    <Pine></Pine>
-    <Facilities></Facilities>
-    <CardProfile :profile="profile"></CardProfile>
-    <Carousel></Carousel>
-    <Location></Location>
+    <Product id="product"></Product>
+    <Facilities id="facilities"></Facilities>
+    <CardProfile :profile="profile" id="contact"></CardProfile>
+    <Carousel id="galeri"></Carousel>
+    <Location id="lokasi"></Location>
     <Footer></Footer>
   </section>
 </template>
 
 <script>
-import CardProfile from "~/components/CardProfile.vue";
-import contoh from "@/assets/images/contoh.png"; // Ubah sesuai path yang benar
-
 export default {
-  components: {
-    CardProfile,
-  },
   async asyncData({ $axios, params }) {
     try {
       const response = await $axios.$get(`/user/${params.nickName}`);
@@ -34,7 +28,7 @@ export default {
     return {
       profile: {
         fullName: "",
-        photos: contoh, // Menggunakan gambar contoh.png dari assets
+        profilePhoto: "contoh.png", // Menggunakan gambar contoh dari assets
         bio: "",
         socialMedia: {
           facebook: "",
@@ -45,6 +39,9 @@ export default {
         },
       },
     };
+  },
+  mounted() {
+    console.log(this.profile);
   },
 };
 </script>

@@ -1,7 +1,7 @@
 <template>
   <section class="m-10">
     <div class="container mx-auto my-3">
-      <div class="flex justify-center max-w-full">
+      <div class="flex justify-center">
         <div class="flex flex-wrap md:flex-nowrap md:space-x-4">
           <div class="bg-white rounded-lg overflow-hidden">
             <div class="flex justify-center p-4">
@@ -105,11 +105,7 @@
                 </nuxt-link>
               </div>
             </form>
-            <form
-              ref="form"
-              @submit.prevent="onSubmit"
-              class="mt-20 max-w-full"
-            >
+            <form ref="form" @submit.prevent="onSubmit" class="mt-20">
               <h2 class="font-bold mt-10 mb-2 text-Dark text-2xl">
                 Media Sosial
               </h2>
@@ -142,7 +138,7 @@
                       </svg>
                     </a>
                     <p class="text-lg font-semibold text-Dark">
-                      {{ truncateDescription(sosmed.linkedin, 10) }}
+                      {{ sosmed.linkedin }}
                     </p>
                   </li>
                 </div>
@@ -169,7 +165,7 @@
                       </svg>
                     </a>
                     <p class="text-lg font-semibold text-Dark">
-                      {{ truncateDescription(sosmedinstagram, 10) }}
+                      {{ sosmed.instagram }}
                     </p>
                   </li>
                 </div>
@@ -200,7 +196,7 @@
                       </svg>
                     </a>
                     <p class="text-lg font-semibold text-Dark">
-                      {{ truncateDescription(sosmed.facebook, 10) }}
+                      {{ sosmed.facebook }}
                     </p>
                   </li>
                 </div>
@@ -227,7 +223,7 @@
                       </svg>
                     </a>
                     <p class="text-lg font-semibold text-Dark">
-                      {{ truncateDescription(sosmed.youtube, 10) }}
+                      {{ sosmed.youtube }}
                     </p>
                   </li>
                 </div>
@@ -255,7 +251,7 @@
                       </svg>
                     </a>
                     <p class="text-lg font-semibold text-Dark">
-                      {{ truncateDescription(sosmed.twitter, 10) }}
+                      {{ sosmed.twitter }}
                     </p>
                   </li>
                 </div>
@@ -338,16 +334,6 @@ export default {
         .catch((error) => {
           console.log(error);
         });
-    },
-    truncateDescription(text, maxLength) {
-      if (!text) {
-        // Cek apakah text adalah null atau undefined
-        return "";
-      }
-      if (text.length <= maxLength) {
-        return text;
-      }
-      return text.substring(0, maxLength) + "...";
     },
   },
   mounted() {

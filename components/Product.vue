@@ -20,10 +20,10 @@
         <div
           v-for="product in products"
           :key="product.id"
-          class="w-full md:w-1/2 lg:w-1/3 px-4 mb-10 mx-20"
+          class="w-full md:w-1/2 lg:w-1/3 px-4 mb-10 mx-10"
         >
           <div
-            class="bg-white rounded-xl shadow-xl overflow-hidden relative transition-transform transform hover:scale-105"
+            class="bg-slate-300 rounded-xl shadow-xl overflow-hidden relative transition-transform transform hover:scale-105"
           >
             <div class="h-64 overflow-hidden relative">
               <img

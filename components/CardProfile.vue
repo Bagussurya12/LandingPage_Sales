@@ -1,16 +1,18 @@
 <template>
-  <section class="py-8 mx-20 pb-10">
+  <section class="py-4 pb-10">
     <div class="container mx-auto">
       <div class="w-full">
         <div class="flex justify-center">
-          <div class="w-full md:flex md:items-center bg-Dark rounded-lg">
+          <div class="w-full md:flex md:items-center bg-Dark">
             <div class="md:w-2/5 md:order-last md:pr-4">
               <div
                 class="relative max-w-[300px] ml-auto overflow-hidden rounded-lg shadow-lg"
               >
                 <img
                   class="w-full h-full object-cover"
-                  :src="photos"
+                  :src="
+                    require(`../../Backend/public/images/${profile.photos}`)
+                  "
                   alt="Profile Photo"
                 />
               </div>
@@ -33,27 +35,42 @@
                 <p class="text-gray-400">Social Media</p>
                 <ul class="mt-2 flex space-x-4">
                   <li v-if="profile.socialMedia.facebook">
-                    <a :href="profile.socialMedia.facebook" class="text-white"
+                    <a
+                      :href="profile.socialMedia.facebook"
+                      class="text-white"
+                      target="_blank"
                       >Facebook</a
                     >
                   </li>
                   <li v-if="profile.socialMedia.twitter">
-                    <a :href="profile.socialMedia.twitter" class="text-white"
+                    <a
+                      :href="profile.socialMedia.twitter"
+                      class="text-white"
+                      target="_blank"
                       >Twitter</a
                     >
                   </li>
                   <li v-if="profile.socialMedia.instagram">
-                    <a :href="profile.socialMedia.instagram" class="text-white"
+                    <a
+                      :href="profile.socialMedia.instagram"
+                      class="text-white"
+                      target="_blank"
                       >Instagram</a
                     >
                   </li>
                   <li v-if="profile.socialMedia.linkedin">
-                    <a :href="profile.socialMedia.linkedin" class="text-white"
+                    <a
+                      :href="profile.socialMedia.linkedin"
+                      class="text-white"
+                      target="_blank"
                       >LinkedIn</a
                     >
                   </li>
                   <li v-if="profile.socialMedia.youtube">
-                    <a :href="profile.socialMedia.youtube" class="text-white"
+                    <a
+                      :href="profile.socialMedia.youtube"
+                      class="text-white"
+                      target="_blank"
                       >YouTube</a
                     >
                   </li>
@@ -68,20 +85,25 @@
 </template>
 
 <script>
-import contoh from "@/assets/images/contoh.png";
-
 export default {
-  name: "ProfileCard",
+  name: "CardProfile",
   props: {
     profile: {
       type: Object,
-      required: true,
+      required: false,
+      default: () => ({
+        fullName: "",
+        profilePhoto: "default.png", // Gambar default jika tidak ada profilePhoto
+        bio: "",
+        socialMedia: {
+          facebook: "",
+          twitter: "",
+          instagram: "",
+          linkedin: "",
+          youtube: "",
+        },
+      }),
     },
-  },
-  data() {
-    return {
-      photos: contoh,
-    };
   },
 };
 </script>
