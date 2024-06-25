@@ -9,7 +9,7 @@
         </div>
         <div class="relative w-full overflow-hidden">
           <div
-            class="flex transition-transform duration-700"
+            class="flex transition-transform duration-100"
             :style="{ transform: `translateX(-${currentIndex * 100}%)` }"
           >
             <div
@@ -22,9 +22,6 @@
                 alt=""
                 class="w-full h-[600px] object-cover rounded-xl"
               />
-              <div
-                class="absolute top-0 left-0 w-full h-full bg-black opacity-50 rounded-xl"
-              ></div>
             </div>
           </div>
           <button

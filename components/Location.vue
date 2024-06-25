@@ -1,11 +1,13 @@
 <template>
   <section id="location" class="pt-36 pb-36 mx-10">
-    <div class="container mx-auto bg-Dark p-4 rounded-3xl">
+    <div
+      class="container mx-auto bg-gradient-to-b from-blue-500 to-slate-700 p-4 rounded-3xl"
+    >
       <div
         class="grid grid-cols-1 lg:grid-cols-2 gap-8 justify-center items-center"
       >
         <div class="px-4 py-10 mb-5 lg:mb-0">
-          <h3 class="text-Hijau font-bold text-4xl mb-10">Lokasi</h3>
+          <h3 class="text-white font-bold text-4xl mb-10">Lokasi</h3>
           <h4 class="text-white font-semibold text-2xl mb-2 font-montserrat">
             Mengapa memilih Pine Residence?
           </h4>

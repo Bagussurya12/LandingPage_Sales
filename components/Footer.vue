@@ -1,9 +1,11 @@
 <template>
-  <footer class="bg-Dark pt-24 pb-12 px-10 font-montserrat">
+  <footer
+    class="bg-gradient-to-b from-slate-700 to-blue-500 pt-24 pb-12 px-10 font-montserrat"
+  >
     <div class="container mx-auto">
       <div class="flex flex-wrap">
         <div class="w-full px-4 mb-12 text-slate-300 font-medium md:w-1/3">
-          <h1 class="font-bold text-4xl text-Hijau font-montserrat">
+          <h1 class="font-bold text-4xl text-white font-montserrat">
             Pine Residence
           </h1>
           <p class="mb-5">By OCBD</p>
@@ -150,12 +152,12 @@
       <div class="w-full pt-10 border-t border-slate-700">
         <div class="flex items-center justify-center mb-5"></div>
         <p
-          class="text-lg font-semibold text-slate-500 text-center font-montserrat"
+          class="text-lg font-semibold text-slate-300 text-center font-montserrat"
         >
           Copy Right &copy;
           <a
             href="https://ocbd.co.id/"
-            class="font-bold text-Hijau"
+            class="font-bold text-white"
             target="_blank"
             >OCBD
           </a>
