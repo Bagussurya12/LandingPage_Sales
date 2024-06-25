@@ -31,7 +31,7 @@
                   require(`../../Backend/public/images/${product.gambar[0].gambar_url}`)
                 "
                 alt="product image"
-                class="w-full h-64 object-cover rounded-xl"
+                class="w-full h-64 object-cover rounded-top"
               />
             </div>
 

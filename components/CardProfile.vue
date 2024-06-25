@@ -3,10 +3,10 @@
     <div class="container mx-auto">
       <div class="w-full">
         <div class="flex justify-center">
-          <div class="w-full md:flex md:items-center bg-Dark">
-            <div class="md:w-2/5 md:order-last md:pr-4">
+          <div class="w-full md:flex md:items-center bg-slate-300 py-20">
+            <div class="md:w-2/5 md:order-first md:pl-4">
               <div
-                class="relative max-w-[300px] ml-auto overflow-hidden rounded-lg shadow-lg"
+                class="relative max-w-[400px] ml-auto overflow-hidden rounded-lg shadow-lg mb-10"
               >
                 <img
                   class="w-full h-full object-cover"
@@ -17,7 +17,7 @@
                 />
               </div>
             </div>
-            <div class="md:w-3/5 md:order-first md:pl-10 mr-10">
+            <div class="md:w-3/5 md:order-last md:pl-10 mr-10 mb-10">
               <div
                 class="uppercase tracking-wide text-4xl md:text:2xl text-white font-semibold mb-4 ml-4"
               >
@@ -28,11 +28,14 @@
               >
                 Sales Executive
               </div>
-              <p class="text-lg leading-relaxed text-white mb-6 ml-4">
+              <p
+                class="text-lg leading-relaxed text-white mb-6 ml-4 max-w-[600px]"
+              >
                 {{ profile.bio }}
               </p>
               <div class="mt-4 ml-4">
                 <p class="text-gray-400">Social Media</p>
+
                 <ul class="mt-2 flex space-x-4">
                   <li v-if="profile.socialMedia.facebook">
                     <a
@@ -71,7 +74,7 @@
                       :href="profile.socialMedia.youtube"
                       class="text-white"
                       target="_blank"
-                      >YouTube</a
+                      >Tiktok</a
                     >
                   </li>
                 </ul>
@@ -93,7 +96,7 @@ export default {
       required: false,
       default: () => ({
         fullName: "",
-        profilePhoto: "default.png", // Gambar default jika tidak ada profilePhoto
+        photos: "default.png", // Menggunakan `photos` untuk menyesuaikan dengan kunci dalam template
         bio: "",
         socialMedia: {
           facebook: "",

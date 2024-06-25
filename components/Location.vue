@@ -5,13 +5,13 @@
         class="grid grid-cols-1 lg:grid-cols-2 gap-8 justify-center items-center"
       >
         <div class="px-4 py-10 mb-5 lg:mb-0">
-          <h3 class="text-Hijau font-bold text-2xl mb-10">Lokasi</h3>
+          <h3 class="text-Hijau font-bold text-4xl mb-10">Lokasi</h3>
           <h4 class="text-white font-semibold text-2xl mb-2 font-montserrat">
             Mengapa memilih Pine Residence?
           </h4>
           <p class="text-white text-lg font-montserrat">
             Lokasi Pine Residence yang termasuk dalam kawasan OCBD terletak
-            pusat kota Bogor, dengan akses langsung ke tol BORR, menjamin nilai
+            pusat kota Bogor, dengan akses langsung ke Tol BORR, menjamin nilai
             investasi yang tinggi. Keunggulan strategis OCBD semakin diperkuat
             dengan lingkungan sekitar yang menyediakan berbagai fasilitas,
             termasuk kesehatan, belanja, pendidikan, dan gaya hidup.
@@ -19,7 +19,7 @@
         </div>
         <div class="px-4">
           <div
-            class="aspect-w-16 aspect-h-8 rounded-3xl overflow-hidden border border-Hijau mb-10"
+            class="aspect-w-16 aspect-h-8 rounded-3xl overflow-hidden border border-Hijau my-10"
           >
             <!-- Menambahkan warna border-Hijau -->
             <iframe

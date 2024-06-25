@@ -2,20 +2,22 @@
   <header
     class="bg-Dark fixed top-0 left-0 w-full flex items-center z-50 py-2 font-montserrat"
   >
-    <div class="container mx-auto px-4">
+    <div class="container mx-auto px-2">
       <div class="flex items-center justify-between relative w-full">
         <!-- Logo and text for larger screens -->
-        <div class="shrink-0 flex items-center mx-10 mt-2 lg:mt-0">
+        <div
+          class="shrink-0 flex items-center mx-10 lg:mt-0 logo-container lg:order-none order-1"
+        >
           <a href="#">
             <img
-              src="../assets/images/logo.svg"
+              src="../assets/images/logo.png"
               alt="logo"
-              class="max-w-[80px] h-auto logo"
+              class="max-w-[60px] h-auto logo mt-5"
             />
           </a>
         </div>
         <!-- Hamburger button for mobile screens -->
-        <div class="flex items-center lg:hidden relative z-50">
+        <div class="flex items-center lg:hidden relative z-50 order-2 -mb-20">
           <button
             id="hamburger"
             name="hamburger"
@@ -37,7 +39,7 @@
         <!-- Navbar menu for all screens -->
         <nav
           id="navbar-menu"
-          class="hidden lg:flex items-center w-full lg:w-auto bg-opacity-0 absolute top-0 right-0 mt-2"
+          class="hidden lg:flex items-center w-full lg:w-auto bg-opacity-0 absolute top-0 right-0 mt-5 lg:order-none order-3"
         >
           <ul class="block lg:flex lg:space-x-4">
             <li class="group">
@@ -71,8 +73,19 @@
           </ul>
         </nav>
       </div>
-      <!-- Logo and text for mobile screens -->
-      <div id="mobile-logo" class="hidden lg:hidden mt-5 items-center"></div>
+      <!-- Logo for mobile screens -->
+      <div
+        id="mobile-logo"
+        class="lg:hidden flex justify-center w-full order-1"
+      >
+        <a href="#">
+          <img
+            src="../assets/images/logo.png"
+            alt="logo"
+            class="max-w-[60px] h-auto logo"
+          />
+        </a>
+      </div>
     </div>
   </header>
 </template>
@@ -85,8 +98,8 @@ export default {
       const mobileLogo = document.getElementById("mobile-logo");
 
       navbarMenu.classList.toggle("hidden");
-      navbarMenu.classList.toggle("glass-effect"); // Add this line
-      document.body.classList.toggle("overflow-hidden"); // Optional: Disable scrolling when menu is open
+      navbarMenu.classList.toggle("glass-effect");
+      document.body.classList.toggle("overflow-hidden");
       mobileLogo.classList.toggle("hidden");
     },
 
@@ -104,8 +117,8 @@ export default {
         !navbarMenu.classList.contains("hidden")
       ) {
         navbarMenu.classList.add("hidden");
-        navbarMenu.classList.remove("glass-effect"); // Add this line
-        document.body.classList.remove("overflow-hidden"); // Optional: Enable scrolling
+        navbarMenu.classList.remove("glass-effect");
+        document.body.classList.remove("overflow-hidden");
         hamburger.classList.remove("hamburger-active");
         mobileLogo.classList.remove("hidden");
       }
@@ -129,47 +142,50 @@ export default {
 
 .glass-effect {
   backdrop-filter: blur(10px);
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.2
-  ); /* Adjust the color and opacity as needed */
+  background-color: rgba(255, 255, 255, 0.2);
   border-radius: 0.5rem;
 }
 
 #navbar-menu ul {
   @apply lg:flex flex-col lg:flex-row items-center justify-center;
 }
+
 #navbar-menu ul li {
   @apply lg:my-0 my-2;
 }
+
 #mobile-logo {
   @apply mt-5 items-center flex;
-  display: none; /* Hide by default on all screens */
+  display: none;
 }
+
 @media (max-width: 767px) {
-  .gede {
-    display: none;
-  }
   .lg\\:hidden {
-    display: none !important; /* Hide lg:hidden elements on small screens */
+    display: none !important;
   }
+
   #mobile-logo {
-    display: flex; /* Show on small screens */
+    display: flex;
   }
+
   #navbar-menu {
     position: absolute;
     margin-top: 60px;
-    padding-top: 10px; /* Reset position for mobile view */
+    padding-top: 10px;
     text-align: justify;
   }
+
   #navbar-menu {
     @apply lg:static absolute top-0 right-0 w-full lg:w-auto text-right glass-effect;
-    transition: backdrop-filter 0.3s, background-color 0.3s; /* Add smooth transition for the glass effect */
+    transition: backdrop-filter 0.3s, background-color 0.3s;
   }
+
   .logo {
     width: 50px;
+  }
+
+  .logo-container {
+    display: none;
   }
 }
 </style>
