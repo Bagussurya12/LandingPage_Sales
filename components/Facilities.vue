@@ -24,7 +24,7 @@
         <h1 class="font-bold text-3xl font-Montserrat text-Dark mb-5">
           THE FIRST RESIDENTIAL DISTRICT THE BEST LOCATION IN BOGOR CITY
         </h1>
-        <h2 class="font-semibold text-Pucat font-Montserrat text-2xl mb-4">
+        <h2 class="font-semibold text-blue-500 font-Montserrat text-2xl mb-4">
           Facilities
         </h2>
       </div>
@@ -34,7 +34,7 @@
       >
         <div class="flex items-start lg:w-1/2 md:w-full p-4 m-5 max-w-[600px]">
           <img
-            src="../assets/icons/smart-home-icon.svg"
+            src="../assets/icons/smart-home-icon.png"
             alt=""
             class="w-16 mr-4 mt-4"
           />
@@ -49,7 +49,7 @@
         <!--  -->
         <div class="flex items-start lg:w-1/2 md:w-full p-4 m-5 max-w-[600px]">
           <img
-            src="../assets/icons/security-system.svg"
+            src="../assets/icons/security.png"
             alt=""
             class="w-16 mr-4 mt-4"
           />
@@ -64,7 +64,7 @@
         <!--  -->
         <div class="flex items-start lg:w-1/2 md:w-full p-4 m-5 max-w-[600px]">
           <img
-            src="../assets/icons/plant-icon.svg"
+            src="../assets/icons/plant-icon.png"
             alt=""
             class="w-16 mr-4 mt-4"
           />
@@ -79,7 +79,7 @@
         <!--  -->
         <div class="flex items-start lg:w-1/2 md:w-full p-4 m-5 max-w-[600px]">
           <img
-            src="../assets/icons/facility-icon.svg"
+            src="../assets/icons/exclusive.png"
             alt=""
             class="w-16 mr-4 mt-4"
           />

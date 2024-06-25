@@ -3,7 +3,7 @@
     <div class="container mx-auto">
       <div class="w-full">
         <div class="flex justify-center">
-          <div class="w-full md:flex md:items-center bg-slate-300 py-20">
+          <div class="w-full md:flex md:items-center bg-gray-100 py-20">
             <div class="md:w-2/5 md:order-first md:pl-4">
               <div
                 class="relative max-w-[400px] ml-auto overflow-hidden rounded-lg shadow-lg mb-10"
@@ -34,13 +34,13 @@
                 {{ profile.bio }}
               </p>
               <div class="mt-4 ml-4">
-                <p class="text-gray-400 text-xl mb-5">Social Media</p>
+                <p class="text-Dark font-bold text-xl mb-5">Social Media</p>
 
                 <ul class="mt-2 flex space-x-4">
                   <li v-if="profile.socialMedia.facebook">
                     <a
                       :href="profile.socialMedia.facebook"
-                      class="text-white"
+                      class="text-black hover:text-blue-500"
                       target="_blank"
                     >
                       <svg
@@ -60,7 +60,7 @@
                   <li v-if="profile.socialMedia.twitter">
                     <a
                       :href="profile.socialMedia.twitter"
-                      class="text-white"
+                      class="text-black hover:text-blue-500"
                       target="_blank"
                     >
                       <svg
@@ -80,7 +80,7 @@
                   <li v-if="profile.socialMedia.instagram">
                     <a
                       :href="profile.socialMedia.instagram"
-                      class="text-white"
+                      class="text-black hover:text-blue-500"
                       target="_blank"
                     >
                       <svg
@@ -100,7 +100,7 @@
                   <li v-if="profile.socialMedia.linkedin">
                     <a
                       :href="profile.socialMedia.linkedin"
-                      class="text-white"
+                      class="text-black hover:text-blue-500"
                       target="_blank"
                     >
                       <svg
@@ -120,13 +120,14 @@
                   <li v-if="profile.socialMedia.tiktok">
                     <a
                       :href="profile.socialMedia.tiktok"
-                      class="text-white"
+                      class="text-black hover:text-blue-500"
                       target="_blank"
                     >
                       <svg
                         role="img"
                         width="20"
                         viewBox="0 0 24 24"
+                        class="fill-current"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <title>TikTok</title>
