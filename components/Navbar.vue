@@ -62,7 +62,7 @@
               <a
                 href="#lokasi"
                 class="text-base text-white font-semibold py-2 mx-2 lg:mx-4 flex group-hover:text-Hijau"
-                >Lokasi</a
+                >Location</a
               >
             </li>
             <li class="group">

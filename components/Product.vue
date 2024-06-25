@@ -50,7 +50,7 @@
                 </p>
                 <button
                   @click="getProductById(product.id)"
-                  class="bg-Dark text-white font-Montserrat py-1 px-2 rounded mx-2 my-2"
+                  class="bg-blue-500 text-white font-Montserrat py-1 px-2 rounded mx-2 my-2"
                 >
                   Lihat Detail
                 </button>
