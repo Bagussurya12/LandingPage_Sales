@@ -1,6 +1,6 @@
 <template>
   <header
-    class="bg-Dark fixed top-0 left-0 w-full flex items-center z-50 py-2 font-montserrat"
+    class="bg-gradient-to-b from-slate-700 to-blue-500 top-0 left-0 w-full flex items-center z-50 py-2 font-montserrat"
   >
     <div class="container mx-auto px-2">
       <div class="flex items-center justify-between relative w-full">
@@ -17,7 +17,9 @@
           </a>
         </div>
         <!-- Hamburger button for mobile screens -->
-        <div class="flex items-center lg:hidden relative z-50 order-2 -mb-20">
+        <div
+          class="flex items-center lg:hidden relative z-50 order-2 -mb-20 bg-slate-400 p-2 rounded-xl"
+        >
           <button
             id="hamburger"
             name="hamburger"
@@ -73,18 +75,24 @@
           </ul>
         </nav>
       </div>
-      <!-- Logo for mobile screens -->
+      <!-- Logo and Brochure for mobile screens -->
       <div
-        id="mobile-logo"
-        class="lg:hidden flex justify-center w-full order-1"
+        class="lg:hidden flex justify-between items-center w-full mt-5 order-1"
       >
-        <a href="#">
-          <img
-            src="../assets/images/logo.png"
-            alt="logo"
-            class="max-w-[60px] h-auto logo"
-          />
-        </a>
+        <div id="mobile-logo" class="flex justify-center w-full -mr-16">
+          <a href="#">
+            <img
+              src="../assets/images/logo.png"
+              alt="logo"
+              class="max-w-[80px] h-auto logo"
+            />
+          </a>
+        </div>
+        <button
+          class="bg-green-700 rounded-full text-xs text-white py-1 px-2 font-bold"
+        >
+          BROCHURE
+        </button>
       </div>
     </div>
   </header>
@@ -154,11 +162,6 @@ export default {
   @apply lg:my-0 my-2;
 }
 
-#mobile-logo {
-  @apply mt-5 items-center flex;
-  display: none;
-}
-
 @media (max-width: 767px) {
   .lg\\:hidden {
     display: none !important;
@@ -186,6 +189,12 @@ export default {
 
   .logo-container {
     display: none;
+  }
+
+  .mobile-brochure {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
   }
 }
 </style>

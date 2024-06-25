@@ -1,18 +1,30 @@
 <template>
   <section id="facilities" class="pb-10 bg-white">
-    <img
-      src="../assets/images/Pine-Residance_images/Pine-Residance-siang_images/gate-pn.jpg"
-      alt=""
-      style="width: 100vw"
-    />
+    <div class="relative">
+      <img
+        src="../assets/images/Pine-Residance_images/pine.png"
+        alt=""
+        class="w-full"
+      />
+      <div
+        class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center"
+      >
+        <h1
+          class="text-white text-2xl md:text-4xl font-bold font-Montserrat mb-2"
+        >
+          -Pine Residence-
+        </h1>
+        <h5 class="text-white text-lg md:text-xl font-bold font-Montserrat">
+          A Metropolis Sanctuary
+        </h5>
+      </div>
+    </div>
     <div class="container mx-auto px-4 py-4 mt-5">
       <div class="max-w-2xl mx-auto text-center mb-5">
         <h1 class="font-bold text-3xl font-Montserrat text-Dark mb-5">
           THE FIRST RESIDENTIAL DISTRICT THE BEST LOCATION IN BOGOR CITY
         </h1>
-        <h2
-          class="font-semibold text-Pucat font-Montserrat text-lg mb-4 sm:text-xl lg:text-xl"
-        >
+        <h2 class="font-semibold text-Pucat font-Montserrat text-2xl mb-4">
           Facilities
         </h2>
       </div>
@@ -91,5 +103,28 @@ export default {
 </script>
 
 <style scoped>
-/* Tambahkan gaya tambahan jika diperlukan */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay h1 {
+  color: white;
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .overlay h1 {
+    font-size: 6rem;
+  }
+}
 </style>

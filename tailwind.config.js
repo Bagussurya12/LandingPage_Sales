@@ -15,6 +15,7 @@ module.exports = {
         Hijau: "#0d9488",
         Dark: "#0f172a",
         Pucat: "#64748b",
+        Biru: "#1D70BA",
       },
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],
