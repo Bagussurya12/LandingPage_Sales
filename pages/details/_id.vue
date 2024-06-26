@@ -1,9 +1,9 @@
 <template>
   <section>
-    <Navbar class="mb-40"></Navbar>
+    <Navbar class="mb-20"></Navbar>
     <WhatsAppChat></WhatsAppChat>
-    <section class="pb-16 bg-white px-4 md:px-20 mt-10">
-      <div class="container mx-auto flex flex-col md:flex-row py-20">
+    <section class="pb-16 bg-white px-4 md:px-20">
+      <div class="container mx-auto flex flex-col md:flex-row py-10">
         <!-- Carousel Wrapper -->
         <div class="w-full md:w-1/3 overflow-hidden mx-auto">
           <div
@@ -92,6 +92,7 @@ export default {
         deskripsi: "",
         spesifikasi: "",
       },
+      intervalId: null,
     };
   },
   methods: {
@@ -136,6 +137,12 @@ export default {
   },
   mounted() {
     this.fetchProduct();
+    this.intervalId = setInterval(() => {
+      this.next();
+    }, 3000); // 3 detik
+  },
+  beforeDestroy() {
+    clearInterval(this.intervalId);
   },
 };
 </script>

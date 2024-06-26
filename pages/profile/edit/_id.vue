@@ -321,7 +321,7 @@ export default {
             console.log(response);
             console.log("SUCCESS_UPDATE");
             this.$router.push({
-              name: "profile___" + this.$i18n.locale,
+              name: "dashboard___" + this.$i18n.locale,
               params: {
                 message: "UPDATE_SUCCESS",
                 fullname: this.form.fullName,
