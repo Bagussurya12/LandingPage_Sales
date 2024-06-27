@@ -5,7 +5,7 @@
     <section class="pb-16 bg-white px-4 md:px-20">
       <div class="container mx-auto flex flex-col md:flex-row py-10">
         <!-- Carousel Wrapper -->
-        <div class="w-full md:w-1/3 overflow-hidden mx-auto">
+        <div class="w-full md:w-1/3 overflow-hidden mx-auto relative">
           <div
             class="flex transition-transform duration-700"
             :style="{ transform: `translateX(-${currentIndex * 100}%)` }"
@@ -24,6 +24,20 @@
               />
             </div>
           </div>
+          <!-- Left Arrow -->
+          <button
+            @click="prev"
+            class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-transparent m-5 text-white p-2 rounded-full text-4xl font-bold"
+          >
+            &lt;
+          </button>
+          <!-- Right Arrow -->
+          <button
+            @click="next"
+            class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-transparent m-5 text-white p-2 rounded-full text-4xl"
+          >
+            &gt;
+          </button>
           <!-- Dots Navigation -->
           <div class="flex justify-center mt-4">
             <span
@@ -71,7 +85,6 @@
 
 <script>
 export default {
-  middleware: ["authenticated"],
   asyncData({ params }) {
     return {
       idProduct: params.id,

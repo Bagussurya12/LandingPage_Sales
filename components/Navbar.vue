@@ -95,7 +95,12 @@
         <button
           class="bg-green-700 rounded-full text-xs text-white py-1 px-2 font-bold"
         >
-          BROCHURE
+          <a
+            href="https://api.whatsapp.com/send/?phone=628119999331&text=Brochure%21%0D%0A%0D%0ASaya+mendapatkan+informasi+terkait+%2APerumahan+Pine+Residence+di+OCBD+Bogor%2A+dengan+Cicilan+6+Juta-an+melalui+situs+web+https%3A%2F%2Focbd.co.id%2F+.+Bisakah+Anda+memberikan+informasi+lebih+lanjut+%3F%0D%0A%0D%0ATerima+kasih.&type=phone_number&app_absent=0"
+            target="_blank"
+          >
+            BROCHURE
+          </a>
         </button>
       </div>
     </div>
