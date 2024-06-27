@@ -48,6 +48,7 @@
               <a
                 href="#"
                 class="text-base text-white font-semibold py-2 mx-2 lg:mx-4 flex group-hover:text-Hijau"
+                @click="navigateToSection('home')"
                 >Home</a
               >
             </li>
@@ -55,6 +56,7 @@
               <a
                 href="#contact"
                 class="text-base text-white font-semibold py-2 mx-2 lg:mx-4 flex group-hover:text-Hijau"
+                @click="navigateToSection('contact')"
                 >Contact Us</a
               >
             </li>
@@ -62,6 +64,7 @@
               <a
                 href="#lokasi"
                 class="text-base text-white font-semibold py-2 mx-2 lg:mx-4 flex group-hover:text-Hijau"
+                @click="navigateToSection('lokasi')"
                 >Location</a
               >
             </li>
@@ -69,6 +72,7 @@
               <a
                 href="#galeri"
                 class="text-base text-white font-semibold py-2 mx-2 lg:mx-4 flex group-hover:text-Hijau"
+                @click="navigateToSection('galeri')"
                 >Gallery</a
               >
             </li>
@@ -130,6 +134,10 @@ export default {
         hamburger.classList.remove("hamburger-active");
         mobileLogo.classList.remove("hidden");
       }
+    },
+
+    navigateToSection(sectionId) {
+      this.$router.push({ name: "home", hash: `#${sectionId}` });
     },
   },
 
