@@ -149,7 +149,7 @@
 
             <li>
               <a
-                href="https://web.facebook.com/ocbd.bogor.official"
+                href="https://www.tiktok.com/@ocbd.bogor.official/"
                 class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-white hover:border-Hijau hover:bg-Hijau hover:text-white"
                 target="_blank"
                 rel="noopener noreferrer"

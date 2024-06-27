@@ -1,6 +1,6 @@
 <template>
   <header
-    class="bg-gradient-to-b from-slate-700 to-blue-500 top-0 left-0 w-full flex items-center z-50 py-2 font-montserrat"
+    class="bg-gradient-to-b from-slate-700 to-blue-500 top-0 left-0 w-full fixed flex items-center z-50 py-2 font-montserrat -mb-16"
   >
     <div class="container mx-auto px-2">
       <div class="flex items-center justify-between relative w-full">

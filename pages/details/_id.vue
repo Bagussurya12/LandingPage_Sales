@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="mt-20">
     <Navbar class="mb-20"></Navbar>
     <WhatsAppChat></WhatsAppChat>
     <section class="pb-16 bg-white px-4 md:px-20">
@@ -41,7 +41,6 @@
           <h1 class="text-3xl font-bold mb-10 mt-5 font-montserrat">
             {{ form.title }}
           </h1>
-          <p class="text-xl mb-2 font-montserrat">Harga: {{ form.harga }}</p>
           <p class="text-xl mb-2 font-montserrat">
             Luas Tanah: {{ form.luas_tanah }} m² | Luas Bangunan:
             {{ form.luas_bangunan }} m²
