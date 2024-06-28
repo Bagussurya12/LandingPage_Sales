@@ -69,7 +69,7 @@
           <p class="text-xl mb-10 font-montserrat">{{ form.deskripsi }}</p>
           <div class="text-start">
             <a
-              class="bg-blue-500 text-white py-2 px-4 w-[400px] pt-30 rounded-md transition-colors duration-300 font-montserrat"
+              class="bg-gradient-to-b from-slate-700 to-blue-500 text-white py-2 px-4 w-[400px] pt-30 rounded-md transition-colors duration-300 font-montserrat font-semibold hover:font-bold"
               href="https://api.whatsapp.com/send/?phone=628119999331&text=Brochure%21%0D%0A%0D%0ASaya+mendapatkan+informasi+terkait+%2APerumahan+Pine+Residence+di+OCBD+Bogor%2A+dengan+Cicilan+6+Juta-an+melalui+situs+web+https%3A%2F%2Focbd.co.id%2F+.+Bisakah+Anda+memberikan+informasi+lebih+lanjut+%3F%0D%0A%0D%0ATerima+kasih.&type=phone_number&app_absent=0"
               target="_blank"
             >

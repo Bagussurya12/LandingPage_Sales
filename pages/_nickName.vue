@@ -1,6 +1,6 @@
 <template>
   <section>
-    <Navbar></Navbar>
+    <NavbarSales></NavbarSales>
     <Master id="#"></Master>
     <WhatsAppChat></WhatsAppChat>
     <Product id="product"></Product>

@@ -6,7 +6,7 @@ export default {
   },
 
   head: {
-    titleTemplate: "Pine Resicence - %s",
+    titleTemplate: "Pine Residence - %s",
     title: "Pine Residence",
     htmlAttrs: {
       lang: "en",
@@ -18,7 +18,7 @@ export default {
       { name: "format-detection", content: "telephone=no" },
     ],
     link: [
-      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      { rel: "icon", type: "image/png", href: "/Logo.png" },
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap",
