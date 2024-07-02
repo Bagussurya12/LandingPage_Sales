@@ -26,13 +26,13 @@
           </div>
           <button
             @click="prev"
-            class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-transparent hover:bg-Dark text-white font-bold px-4 py-2 rounded-full lg:text-6xl md:text-4xl sm:text-2xl"
+            class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-transparent text-white font-bold px-4 py-2 rounded-full lg:text-6xl md:text-4xl sm:text-2xl"
           >
             &#8592;
           </button>
           <button
             @click="next"
-            class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-transparent hover:bg-Dark text-white font-bold px-4 py-2 rounded-full lg:text-6xl md:text-4xl sm:text-2xl"
+            class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-transparent text-white font-bold px-4 py-2 rounded-full lg:text-6xl md:text-4xl sm:text-2xl"
           >
             &#8594;
           </button>

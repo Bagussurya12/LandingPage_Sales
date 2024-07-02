@@ -1,6 +1,6 @@
 <template>
-  <section class="m-10">
-    <div class="container mx-auto my-3">
+  <section>
+    <div class="container mx-auto">
       <div class="flex justify-center max-w-full">
         <div class="flex flex-wrap md:flex-nowrap md:space-x-4">
           <div class="bg-white rounded-lg overflow-hidden">
@@ -82,7 +82,7 @@
                   <h1 class="block text-xl font-medium text-Dark mb-2">
                     Alamat
                   </h1>
-                  <h1 class="h-10 text-Dark font-bold text-xl">
+                  <h1 class="h-24 text-Dark font-bold text-xl">
                     {{ profile.address }}
                   </h1>
                   <div class="w-full pt-10 border-t border-Dark"></div>
@@ -91,7 +91,7 @@
                   <h1 class="block text-xl font-medium text-Dark mb-2">
                     Jenis Kelamin
                   </h1>
-                  <h1 class="h-10 text-Dark font-bold text-xl">
+                  <h1 class="h-24 text-Dark font-bold text-xl">
                     {{ profile.gender }}
                   </h1>
                   <div class="w-full pt-10 border-t border-Dark"></div>

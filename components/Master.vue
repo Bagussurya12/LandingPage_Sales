@@ -8,6 +8,9 @@
         class="m-0 p-0 w-full h-full object-cover zoom-effect"
       />
       <!-- Overlay -->
+      <div
+        class="absolute top-0 left-0 w-full h-full bg-black opacity-50"
+      ></div>
       <!-- Text Content -->
       <div
         class="absolute top-0 left-0 w-full h-full flex items-center justify-center text-white"
@@ -56,5 +59,9 @@ export default {
 
 .zoom-effect {
   transition: transform 0.9s ease;
+}
+
+.opacity-50 {
+  opacity: 0.5;
 }
 </style>

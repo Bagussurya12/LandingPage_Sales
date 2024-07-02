@@ -12,7 +12,7 @@
             <img
               src="../assets/images/logo.png"
               alt="logo"
-              class="max-w-[60px] h-auto logo mt-5"
+              class="max-w-[60px] h-[40px] logo mt-2"
             />
           </a>
         </div>
@@ -41,13 +41,13 @@
         <!-- Navbar menu for all screens -->
         <nav
           id="navbar-menu"
-          class="hidden lg:flex items-center w-full lg:w-auto bg-opacity-0 absolute top-0 right-0 mt-5 lg:order-none order-3"
+          class="hidden lg:flex items-center w-full lg:w-auto bg-opacity-0 absolute top-0 right-0 mt-2 lg:order-none order-3"
         >
           <ul class="block lg:flex lg:space-x-4">
             <li class="group">
               <a
                 href="#"
-                class="text-base text-white font-semibold py-2 mx-2 lg:mx-4 flex group-hover:text-Hijau"
+                class="menu-link text-base text-white font-semibold py-2 mx-2 lg:mx-4 flex group-hover:text-Dark"
                 @click="navigateToSection('home')"
                 >Home</a
               >
@@ -55,7 +55,7 @@
             <li class="group">
               <a
                 href="#contact"
-                class="text-base text-white font-semibold py-2 mx-2 lg:mx-4 flex group-hover:text-Hijau"
+                class="menu-link text-base text-white font-semibold py-2 mx-2 lg:mx-4 flex group-hover:text-Dark"
                 @click="navigateToSection('contact')"
                 >Contact Us</a
               >
@@ -63,7 +63,7 @@
             <li class="group">
               <a
                 href="#lokasi"
-                class="text-base text-white font-semibold py-2 mx-2 lg:mx-4 flex group-hover:text-Hijau"
+                class="menu-link text-base text-white font-semibold py-2 mx-2 lg:mx-4 flex group-hover:text-Dark"
                 @click="navigateToSection('lokasi')"
                 >Location</a
               >
@@ -71,7 +71,7 @@
             <li class="group">
               <a
                 href="#galeri"
-                class="text-base text-white font-semibold py-2 mx-2 lg:mx-4 flex group-hover:text-Hijau"
+                class="menu-link text-base text-white font-semibold py-2 mx-2 lg:mx-4 flex group-hover:text-Dark"
                 @click="navigateToSection('galeri')"
                 >Gallery</a
               >
@@ -208,6 +208,10 @@ export default {
     display: flex;
     justify-content: flex-end;
     width: 100%;
+  }
+
+  .menu-link {
+    @apply text-black;
   }
 }
 </style>

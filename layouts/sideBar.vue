@@ -4,7 +4,7 @@
       <!-- Sidebar -->
       <div
         :class="{ 'w-64': sideDrawer, 'w-16': !sideDrawer }"
-        class="bg-Dark text-white flex flex-col transition-all duration-300"
+        class="bg-Dark text-white flex flex-col transition-all duration-300 fixed h-full"
       >
         <div class="flex items-center justify-center h-16">
           <button @click="toggleSideDrawer" class="focus:outline-none">
@@ -49,7 +49,10 @@
       </div>
 
       <!-- Main Content -->
-      <div class="flex-1">
+      <div
+        :class="{ 'ml-64': sideDrawer, 'ml-16': !sideDrawer }"
+        class="flex-1 transition-all duration-300"
+      >
         <main class="p-4">
           <Nuxt />
         </main>
@@ -123,3 +126,10 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+/* Optional: Adjust the z-index if needed */
+.fixed {
+  z-index: 10;
+}
+</style>
