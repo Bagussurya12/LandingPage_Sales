@@ -9,7 +9,7 @@
                 class="relative max-w-[400px] mx-20 overflow-hidden rounded-lg shadow-lg mb-10"
               >
                 <img
-                  class="w-full h-full object-cover"
+                  class="w-full max-h-[400px] object-cover"
                   :src="
                     require(`../../Backend/public/images/${profile.photos}`)
                   "
