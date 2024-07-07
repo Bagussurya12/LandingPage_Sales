@@ -359,7 +359,6 @@ export default {
           if (respone.status) {
             this.sosmed = respone.sosmed;
           }
-          console.log(this.sosmed);
         })
         .catch((error) => {
           console.log(error);
@@ -378,7 +377,6 @@ export default {
   },
   mounted() {
     this.fetchSosmed();
-    console.log(this.profile);
   },
 };
 </script>

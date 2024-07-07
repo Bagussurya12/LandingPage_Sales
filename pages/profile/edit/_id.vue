@@ -81,7 +81,7 @@
                     <label
                       class="block text-xl font-medium text-Dark mb-2"
                       for="gender"
-                      >gender</label
+                      >Gender</label
                     >
                     <select
                       id="gender"
@@ -267,7 +267,6 @@ export default {
           this.form.address = profile.address;
           this.form.photos = profile.profilePhoto;
           this.form.bio = profile.bio;
-          console.log(this.form);
         })
         .catch((error) => {
           this.$router.push({

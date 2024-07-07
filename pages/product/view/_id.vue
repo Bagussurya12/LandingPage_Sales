@@ -1,62 +1,60 @@
 <template>
-  <NuxtLayout :name="sideBar">
-    <section class="pb-16 bg-white px-4 md:px-20 pt-10">
-      <div class="container mx-auto flex flex-col md:flex-row">
-        <!-- Carousel Wrapper -->
-        <div class="w-full md:w-1/3 overflow-hidden mx-auto">
+  <section class="pb-16 bg-white px-4 md:px-20 pt-10">
+    <div class="container mx-auto flex flex-col md:flex-row">
+      <!-- Carousel Wrapper -->
+      <div class="w-full md:w-1/3 overflow-hidden mx-auto">
+        <div
+          class="flex transition-transform duration-700"
+          :style="{ transform: `translateX(-${currentIndex * 100}%)` }"
+        >
           <div
-            class="flex transition-transform duration-700"
-            :style="{ transform: `translateX(-${currentIndex * 100}%)` }"
+            v-for="(picture, index) in form.pictures"
+            :key="index"
+            class="min-w-full h-200 relative"
           >
+            <img
+              :src="
+                require(`../../../../Backend/public/images/${picture.gambar_url}`)
+              "
+              alt=""
+              class="w-full h-full object-cover rounded-xl"
+            />
             <div
-              v-for="(picture, index) in form.pictures"
-              :key="index"
-              class="min-w-full h-200 relative"
-            >
-              <img
-                :src="
-                  require(`../../../../Backend/public/images/${picture.gambar_url}`)
-                "
-                alt=""
-                class="w-full h-full object-cover rounded-xl"
-              />
-              <div
-                class="absolute top-0 left-0 w-full h-full bg-black opacity-50 rounded-xl"
-              ></div>
-            </div>
-          </div>
-          <!-- Dots Navigation -->
-          <div class="flex justify-center mt-4">
-            <span
-              v-for="(picture, index) in form.pictures"
-              :key="index"
-              @click="goToSlide(index)"
-              :class="['dot', { active: currentIndex === index }]"
-            ></span>
+              class="absolute top-0 left-0 w-full h-full bg-black opacity-50 rounded-xl"
+            ></div>
           </div>
         </div>
-        <!-- Other content can be placed here -->
-        <div
-          class="w-full md:w-2/3 md:mt-0 md:pl-8 text-start md:text-left mt-10"
-        >
-          <h1 class="text-3xl font-bold mb-4 mt-5">{{ form.title }}</h1>
-          <p class="text-xl mb-2">Harga: {{ form.harga }}</p>
-          <p class="text-xl mb-2">
-            Luas Tanah: {{ form.luas_tanah }} m² | Luas Bangunan:
-            {{ form.luas_bangunan }} m²
-          </p>
-          <p class="text-xl mb-2">
-            Jumlah Kamar Mandi: {{ form.jumlah_kamar_mandi }} | Jumlah Kamar
-            Tidur: {{ form.jumlah_kamar_tidur }}
-          </p>
-          <p class="font-bold">Spesifikasi:</p>
-          <p class="text-xl mb-2">spesifikasi: {{ form.spesifikasi }}</p>
-          <p class="font-bold">Deskripsi:</p>
-          <p class="text-xl mb-2">Deskripsii: {{ form.deskripsi }}</p>
+        <!-- Dots Navigation -->
+        <div class="flex justify-center mt-4">
+          <span
+            v-for="(picture, index) in form.pictures"
+            :key="index"
+            @click="goToSlide(index)"
+            :class="['dot', { active: currentIndex === index }]"
+          ></span>
         </div>
       </div>
-    </section>
-  </NuxtLayout>
+      <!-- Other content can be placed here -->
+      <div
+        class="w-full md:w-2/3 md:mt-0 md:pl-8 text-start md:text-left mt-10"
+      >
+        <h1 class="text-3xl font-bold mb-4 mt-5">{{ form.title }}</h1>
+        <p class="text-xl mb-2">Harga: {{ form.harga }}</p>
+        <p class="text-xl mb-2">
+          Luas Tanah: {{ form.luas_tanah }} m² | Luas Bangunan:
+          {{ form.luas_bangunan }} m²
+        </p>
+        <p class="text-xl mb-2">
+          Jumlah Kamar Mandi: {{ form.jumlah_kamar_mandi }} | Jumlah Kamar
+          Tidur: {{ form.jumlah_kamar_tidur }}
+        </p>
+        <p class="font-bold">Spesifikasi:</p>
+        <p class="text-xl mb-2">spesifikasi: {{ form.spesifikasi }}</p>
+        <p class="font-bold">Deskripsi:</p>
+        <p class="text-xl mb-2">Deskripsii: {{ form.deskripsi }}</p>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>

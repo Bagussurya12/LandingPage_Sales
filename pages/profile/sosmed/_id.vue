@@ -44,6 +44,7 @@
                       type="text"
                       v-model="form.linkedin"
                       :rules="rules.linkedin"
+                      placeholder="Masukan Link Profile Linked In"
                       class="mt-1 my-5 h-10 block w-full border-2 border-black rounded-lg shadow-sm focus:border-Dark focus:ring pl-2"
                     />
                     <div
@@ -65,6 +66,7 @@
                       type="text"
                       :rules="rules.instagram"
                       v-model="form.instagram"
+                      placeholder="Masukan Link Profile Instagram"
                       class="mt-1 h-10 block w-full border-2 border-black rounded-lg shadow-sm focus:border-Dark focus:ring pl-2"
                     />
                     <div
@@ -89,6 +91,7 @@
                       type="text"
                       :rules="rules.facebook"
                       v-model="form.facebook"
+                      placeholder="Masukan Link Profile Facebook"
                       class="mt-1 h-10 block w-full border-2 border-black rounded-lg shadow-sm focus:border-Dark focus:ring pl-2"
                     />
                     <div
@@ -111,6 +114,7 @@
                       :rules="rules.whatsApp"
                       v-model="form.whatsApp"
                       class="mt-1 h-10 block w-full border-2 border-black rounded-lg shadow-sm focus:border-Dark focus:ring pl-2"
+                      placeholder="Masukan Nomor WhatsApp dengan Kode Negara (+628)"
                     />
                     <div
                       v-if="formErrors.whatsApp"
@@ -125,7 +129,7 @@
                     <label
                       class="block text-xl font-medium text-Dark mb-2"
                       for="twitter"
-                      >Twitter</label
+                      >X</label
                     >
                     <input
                       id="twitter"
@@ -133,6 +137,7 @@
                       type="text"
                       :rules="rules.twitter"
                       v-model="form.twitter"
+                      placeholder="Masukan Link Profile X"
                       class="mt-1 h-10 block w-full border-2 border-black rounded-lg shadow-sm focus:border-Dark focus:ring pl-2"
                     />
                     <div
@@ -154,6 +159,7 @@
                       type="text"
                       :rules="rules.tiktok"
                       v-model="form.tiktok"
+                      placeholder="Masukan Link Profile Tik Tok"
                       class="mt-1 h-10 block w-full border-2 border-black rounded-lg shadow-sm focus:border-Dark focus:ring pl-2"
                     />
                     <div
@@ -250,7 +256,6 @@ export default {
           this.form.whatsApp = socialMedia.whatsApp;
           this.form.twitter = socialMedia.twitter;
           this.form.tiktok = socialMedia.tiktok;
-          console.log(socialMedia);
         })
         .catch((error) => {
           this.$router.push({

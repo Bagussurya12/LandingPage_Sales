@@ -171,7 +171,6 @@ export default {
           if (response.status) {
             this.products = response.products;
           }
-          console.log(this.products);
         })
         .catch((error) => {
           console.log(error);

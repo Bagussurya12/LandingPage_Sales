@@ -1,7 +1,5 @@
 <template>
-  <NuxtLayout :name="sideBar">
-    <DashboardComponent></DashboardComponent>
-  </NuxtLayout>
+  <DashboardComponent></DashboardComponent>
 </template>
 
 <script>

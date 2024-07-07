@@ -9,7 +9,7 @@
                 class="relative max-w-[400px] mx-20 overflow-hidden rounded-lg shadow-lg mb-10"
               >
                 <img
-                  class="w-full max-h-[400px] object-cover"
+                  class="w-full max-h-[500px] object-cover"
                   :src="
                     require(`../../Backend/public/images/${profile.photos}`)
                   "
@@ -26,7 +26,7 @@
               <div
                 class="uppercase tracking-wide text-2xl md:text-xl text-blue-500 font-semibold mb-4 ml-4"
               >
-                Sales Executive
+                {{ profile.division }}
               </div>
               <div class="w-full border-b border-slate-700"></div>
               <p
@@ -141,7 +141,7 @@
                 </ul>
                 <div class="flex flex-wrap">
                   <a
-                    :href="`https://wa.me/${profile.socialMedia.whatsApp}`"
+                    :href="`https://api.whatsapp.com/send/?phone=${profile.socialMedia.whatsApp}&text=Brochure%21%0D%0A%0D%0ASaya+mendapatkan+informasi+terkait+%2APerumahan+Pine+Residence+di+OCBD+Bogor%2A+dengan+Cicilan+6+Juta-an+melalui+situs+web+https%3A%2F%2Fpine-residence.co.id%2F+.+Bisakah+Anda+memberikan+informasi+lebih+lanjut+%3F%0D%0A%0D%0ATerima+kasih.&type=phone_number&app_absent=0`"
                     target="_blank"
                     class="mt-10 rounded-full bg-green-700 py-2 px-4 text-white font-semibold hover:bg-green-600 flex items-center text-xl"
                   >
@@ -180,6 +180,7 @@ export default {
         fullName: "",
         photos: "default.png", // Menggunakan `photos` untuk menyesuaikan dengan kunci dalam template
         bio: "",
+        division: "",
         socialMedia: {
           facebook: "",
           twitter: "",

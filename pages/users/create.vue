@@ -66,7 +66,7 @@
               <select
                 v-model="form.level"
                 :class="{ 'border-red-500': errors.level }"
-                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 font-semibold leading-tight focus:outline-none focus:shadow-outline"
                 id="level"
               >
                 <option value="" disabled class="text-Dark">Select Role</option>
@@ -74,7 +74,7 @@
                   v-for="level in levels"
                   :key="level"
                   :value="level"
-                  class="text-Dark"
+                  class="text-Dark font-semibold"
                 >
                   {{ level }}
                 </option>
@@ -90,7 +90,7 @@
               <select
                 v-model="form.division"
                 :class="{ 'border-red-500': errors.division }"
-                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 font-semibold leading-tight focus:outline-none focus:shadow-outline"
                 id="division"
               >
                 <option value="" disabled class="text-Dark">
@@ -100,7 +100,7 @@
                   v-for="division in divisions"
                   :key="division"
                   :value="division"
-                  class="text-Dark"
+                  class="text-Dark font-semibold"
                 >
                   {{ division }}
                 </option>

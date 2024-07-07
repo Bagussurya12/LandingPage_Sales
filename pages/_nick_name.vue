@@ -16,7 +16,7 @@
 export default {
   async asyncData({ $axios, params }) {
     try {
-      const response = await $axios.$get(`/user/${params.nickName}`);
+      const response = await $axios.$get(`/user/${params.nick_name}`);
       return {
         profile: response.user,
       };
@@ -30,6 +30,7 @@ export default {
         fullName: "",
         profilePhoto: "contoh.png", // Menggunakan gambar contoh dari assets
         bio: "",
+        division: "",
         socialMedia: {
           facebook: "",
           twitter: "",
