@@ -26,21 +26,22 @@
             <div class="mb-4">
               <label
                 class="block text-white text-sm font-bold mb-2"
-                for="nickName"
+                for="nick_name"
                 >Nick Name</label
               >
               <input
-                v-model="form.nickName"
-                :class="{ 'border-red-500': errors.nickName }"
+                v-model="form.nick_name"
+                :class="{ 'border-red-500': errors.nick_name }"
                 class="shadow appearance-none border rounded w-full py-2 px-3 text-Dark leading-tight focus:outline-none focus:shadow-outline"
                 type="text"
-                id="nickName"
+                id="nick_name"
                 placeholder="Nick Name"
               />
-              <p v-if="errors.nickName" class="text-red-500 text-xs italic">
-                {{ errors.nickName }}
+              <p v-if="errors.nick_name" class="text-red-500 text-xs italic">
+                {{ errors.nick_name }}
               </p>
             </div>
+
             <div class="mb-4">
               <label class="block text-white text-sm font-bold mb-2" for="email"
                 >Email</label
@@ -80,6 +81,32 @@
               </select>
               <p v-if="errors.level" class="text-red-500 text-xs italic">
                 {{ errors.level }}
+              </p>
+            </div>
+            <div class="mb-4">
+              <label class="block text-white text-sm font-bold mb-2" for="level"
+                >Division</label
+              >
+              <select
+                v-model="form.division"
+                :class="{ 'border-red-500': errors.division }"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="division"
+              >
+                <option value="" disabled class="text-Dark">
+                  Select Division
+                </option>
+                <option
+                  v-for="division in divisions"
+                  :key="division"
+                  :value="division"
+                  class="text-Dark"
+                >
+                  {{ division }}
+                </option>
+              </select>
+              <p v-if="errors.division" class="text-red-500 text-xs italic">
+                {{ errors.division }}
               </p>
             </div>
             <div class="mb-4">
@@ -126,6 +153,7 @@
                 :disabled="isDisable"
                 class="bg-Hijau hover:bg-teal-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                 type="submit"
+                @click=""
               >
                 <span v-if="!isDisable">Simpan</span>
                 <span v-else>Loading...</span>
@@ -145,27 +173,30 @@ export default {
     return {
       isDisable: false,
       levels: ["Admin", "Staff"],
+      divisions: ["SALES EXECUTIVE", "AGENT PROPERTY OCBD"],
       emailExist: false,
       nickNameExist: false,
       form: {
         fullname: "",
-        nickName: "",
+        nick_name: "",
         email: "",
         password: "",
         retype_password: "",
         level: "",
+        division: "",
       },
       errors: {
         fullname: "",
-        nickName: "",
+        nick_name: "",
         email: "",
         password: "",
         retype_password: "",
         level: "",
+        division: "",
       },
       rules: {
         fullname: [(v) => !!v || this.$t("FULLNAME_IS_REQUIRED")],
-        nickName: [
+        nick_name: [
           (v) => !!v || this.$t("NICKNAME_IS_REQUIRED"),
           (v) => /^[a-z0-9._]+$/.test(v) || this.$t("NICKNAME_INVALID"),
         ],
@@ -186,6 +217,7 @@ export default {
             this.$t("RE_PASSWORD_MUST_BE_SAME_WITH_PASSWORD"),
         ],
         level: [(v) => !!v || this.$t("ROLE_IS_REQUIRED")],
+        division: [(v) => !!v || this.$t("DIVISION_IS_REQUIRED")],
       },
     };
   },
@@ -196,11 +228,12 @@ export default {
     validateForm() {
       this.errors = {
         fullname: "",
-        nickName: "",
+        nick_name: "",
         email: "",
         password: "",
         retype_password: "",
         level: "",
+        division: "",
       };
       let valid = true;
 
@@ -208,14 +241,14 @@ export default {
         this.errors.fullname = "Nama lengkap diperlukan.";
         valid = false;
       }
-      if (!this.form.nickName) {
-        this.errors.nickName = "Nick Name diperlukan.";
+      if (!this.form.nick_name) {
+        this.errors.nick_name = "Nick Name diperlukan.";
         valid = false;
-      } else if (!/^[a-z0-9._]+$/.test(this.form.nickName)) {
-        this.errors.nickName = "Nick Name tidak valid.";
+      } else if (!/^[a-z0-9._]+$/.test(this.form.nick_name)) {
+        this.errors.nick_name = "Nick Name tidak valid.";
         valid = false;
       } else if (this.nickNameExist) {
-        this.errors.nickName = "Nick Name Sudah Di Gunakan!";
+        this.errors.nick_name = "Nick Name Sudah Di Gunakan!";
         valid = false;
       }
       if (!this.form.email) {
@@ -244,6 +277,10 @@ export default {
       }
       if (!this.form.level) {
         this.errors.level = "Peran diperlukan.";
+        valid = false;
+      }
+      if (!this.form.division) {
+        this.errors.division = "Peran diperlukan.";
         valid = false;
       }
       return valid;
@@ -275,9 +312,10 @@ export default {
               error.response.data.message === "NICK_NAME_ALREADY_EXIST"
             ) {
               this.nickNameExist = true;
-              this.errors.nickName = "Nick Name Sudah Di Gunakan!";
+              this.errors.nick_name = "Nick Name Sudah Di Gunakan!";
             }
             this.isDisable = false;
+            console.log(this.form);
           });
       }
     },
