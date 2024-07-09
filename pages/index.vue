@@ -3,8 +3,8 @@
     <Navbar></Navbar>
     <Master></Master>
     <WhatsAppChat></WhatsAppChat>
-    <Product></Product>
     <Facilities></Facilities>
+    <Product></Product>
     <PageContactMain id="contact"></PageContactMain>
     <Carousel id="galeri"></Carousel>
     <Location id="lokasi"></Location>
@@ -18,5 +18,6 @@ import WhatsAppChat from "../components/WhatsAppChat.vue";
 
 export default {
   name: "Home",
+  middleware: "unauthenticated",
 };
 </script>

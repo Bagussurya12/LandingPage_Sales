@@ -10,5 +10,6 @@ import LoginComponent from "../components/LoginComponent.vue";
 export default {
   name: "Login",
   layout: "empty",
+  middleware: "unauthenticated",
 };
 </script>

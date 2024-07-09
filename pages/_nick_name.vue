@@ -3,8 +3,8 @@
     <NavbarSales></NavbarSales>
     <Master id="#"></Master>
     <WhatsAppChat></WhatsAppChat>
-    <Product id="product"></Product>
     <Facilities id="facilities"></Facilities>
+    <Product id="product"></Product>
     <CardProfile :profile="profile" id="contact"></CardProfile>
     <Carousel id="galeri"></Carousel>
     <Location id="lokasi"></Location>
@@ -14,6 +14,7 @@
 
 <script>
 export default {
+  middleware: "unauthenticated",
   async asyncData({ $axios, params }) {
     try {
       const response = await $axios.$get(`/user/${params.nick_name}`);

@@ -1,6 +1,7 @@
 // middleware/unauthenticated.js
 export default function ({ store, redirect, route }) {
   const unauthenticatedRoutes = [
+    "/",
     "/login",
     "/contact",
     "/about",

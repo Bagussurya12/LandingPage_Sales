@@ -55,7 +55,7 @@ export default {
     ],
   },
   router: {
-    middleware: ["authenticated"], // Middleware yang akan diterapkan ke semua rute
+    middleware: [], // Middleware yang akan diterapkan ke semua rute
   },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
