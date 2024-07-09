@@ -3,6 +3,7 @@
     <Navbar></Navbar>
     <Master></Master>
     <WhatsAppChat></WhatsAppChat>
+    <More></More>
     <Facilities></Facilities>
     <Product></Product>
     <PageContactMain id="contact"></PageContactMain>
@@ -13,6 +14,7 @@
 </template>
 
 <script>
+import More from "../components/More.vue";
 import PageContactMain from "../components/PageContactMain.vue";
 import WhatsAppChat from "../components/WhatsAppChat.vue";
 
