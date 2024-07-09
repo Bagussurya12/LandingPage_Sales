@@ -1,5 +1,8 @@
 <template>
-  <section id="contact" class="pt-24 pb-24 px-10 bg-Dark">
+  <section
+    id="contact"
+    class="pt-24 pb-24 px-10 bg-gradient-to-b from-slate-700 to-blue-500 font-montserrat"
+  >
     <div class="container mx-auto p-2 rounded-3xl">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
         <!-- Mengubah grid-cols-1 menjadi grid-cols-2 -->

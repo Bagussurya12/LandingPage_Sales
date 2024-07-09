@@ -5,7 +5,7 @@
     <section class="pb-16 bg-white px-4 md:px-20">
       <div class="container mx-auto flex flex-col md:flex-row py-10">
         <!-- Carousel Wrapper -->
-        <div class="w-full md:w-1/3 overflow-hidden mx-auto relative">
+        <div class="w-full md:w-1/2 overflow-hidden mx-auto relative">
           <div
             class="flex transition-transform duration-700"
             :style="{ transform: `translateX(-${currentIndex * 100}%)` }"
@@ -20,7 +20,7 @@
                   require(`../../../Backend/public/images/${picture.gambar_url}`)
                 "
                 alt=""
-                class="w-full h-full object-cover rounded-xl"
+                class="w-full max-h-[600px] object-cover rounded-xl"
               />
             </div>
           </div>
@@ -50,7 +50,7 @@
         </div>
         <!-- Other content can be placed here -->
         <div
-          class="w-full md:w-2/3 md:mt-0 md:pl-8 text-start md:text-left mt-10 font-montserrat"
+          class="w-full md:w-1/2 md:mt-0 md:pl-8 text-start md:text-left mt-10 font-montserrat"
         >
           <h1 class="text-3xl font-bold mb-10 mt-5 font-montserrat">
             {{ form.title }}

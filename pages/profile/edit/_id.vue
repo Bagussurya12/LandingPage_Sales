@@ -81,7 +81,7 @@
                     <label
                       class="block text-xl font-medium text-Dark mb-2"
                       for="gender"
-                      >Gender</label
+                      >Jenis Kelamin</label
                     >
                     <select
                       id="gender"
