@@ -2,6 +2,7 @@
   <section>
     <NavbarSales></NavbarSales>
     <Master id="#"></Master>
+    <More></More>
     <WhatsAppChat></WhatsAppChat>
     <Facilities id="facilities"></Facilities>
     <Product id="product"></Product>

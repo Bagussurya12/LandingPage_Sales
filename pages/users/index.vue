@@ -4,11 +4,11 @@
       <div
         class="bg-primary text-Dark py-4 px-2 flex justify-between items-center"
       >
-        <h1 class="text-xl font-bold">Users Management</h1>
+        <h1 class="text-xl font-bold">Kelola Pengguna</h1>
         <input
           v-model="search"
           class="rounded border border-gray-400 px-3 py-1"
-          placeholder="Search"
+          placeholder="Cari Pengguna"
         />
       </div>
       <div class="my-3">
@@ -16,7 +16,7 @@
           <nav class="flex">
             <ol class="list-none p-0">
               <li class="inline-block">
-                <a href="#" class="text-Dark font-bold text-4xl">Users</a>
+                <a href="#" class="text-Dark font-bold text-4xl">Pengguna</a>
               </li>
             </ol>
           </nav>
@@ -24,18 +24,18 @@
             @click="goToAddUser"
             class="bg-Hijau hover:bg-teal-950 text-white font-bold py-2 px-4 rounded"
           >
-            Add User
+            Tambah Pengguna
           </button>
         </div>
         <table class="table-auto w-full my-4 border-b-4 rounded-xl">
           <thead class="bg-Dark text-white">
             <tr>
               <th class="px-4 py-2">ID</th>
-              <th class="px-4 py-2">Full Name</th>
+              <th class="px-4 py-2">Nama Lengkap</th>
               <th class="px-4 py-2">Email</th>
-              <th class="px-4 py-2">Nick Name</th>
-              <th class="px-4 py-2">Level</th>
-              <th class="px-4 py-2">Actions</th>
+              <th class="px-4 py-2">Nama Panggilan</th>
+              <th class="px-4 py-2">Peran</th>
+              <th class="px-4 py-2">#</th>
             </tr>
           </thead>
           <tbody>
@@ -50,7 +50,7 @@
                   @click="confirmDeleteUser(user)"
                   class="bg-red-700 hover:bg-red-950 text-white font-bold py-1 px-2 rounded mx-2 my-2"
                 >
-                  Delete
+                  Hapus
                 </button>
                 <button
                   @click="editUser(user.id)"

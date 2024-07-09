@@ -11,7 +11,7 @@
                 >
                   <li class="pr-4">
                     <nuxt-link to="/product" class="hover:text-Dark"
-                      >Product</nuxt-link
+                      >Produk</nuxt-link
                     >
                   </li>
                   <li class="px-4 text-Dark" aria-current="page">
@@ -164,7 +164,7 @@
                       id="deskripsi"
                       name="deskripsi"
                       v-model="form.deskripsi"
-                      class="mt-1 block w-full border-2 border-black rounded-lg shadow-sm focus:border-Dark focus:ring"
+                      class="mt-1 px-2 block w-full border-2 border-black rounded-lg shadow-sm focus:border-Dark focus:ring"
                       rows="5"
                       placeholder="Masukan Deskripsi Produk"
                     ></textarea>
@@ -185,7 +185,7 @@
                       id="spesifikasi"
                       name="spesifikasi"
                       v-model="form.spesifikasi"
-                      class="mt-1 block w-full border-2 border-black rounded-lg shadow-sm focus:border-Dark focus:ring"
+                      class="mt-1 px-2 block w-full border-2 border-black rounded-lg shadow-sm focus:border-Dark focus:ring"
                       rows="5"
                       placeholder="Masukan Spesifikasi Produk"
                     ></textarea>

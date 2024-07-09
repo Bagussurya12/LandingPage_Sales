@@ -4,7 +4,9 @@
       <div class="flex justify-center">
         <div class="w-full md:w-full">
           <div class="bg-white">
-            <h2 class="text-Dark py-10 px-5 font-bold text-4xl">Edit User</h2>
+            <h2 class="text-Dark py-10 px-5 font-bold text-4xl">
+              Edit Pengguna
+            </h2>
 
             <div class="text-black p-4 rounded-b-md">
               <nav aria-label="breadcrumb" class="mb-4 text-Dark text-2xl">
@@ -13,10 +15,12 @@
                 >
                   <li class="pr-4">
                     <nuxt-link to="/users" class="hover:underline"
-                      >Users</nuxt-link
+                      >Pengguna</nuxt-link
                     >
                   </li>
-                  <li class="px-4 text-Dark" aria-current="page">Edit User</li>
+                  <li class="px-4 text-Dark" aria-current="page">
+                    Edit Pengguna
+                  </li>
                 </ol>
               </nav>
               <form ref="form" @submit.prevent="onSubmit">
@@ -54,6 +58,7 @@
                       type="email"
                       v-model="form.email"
                       :rules="rules.email"
+                      required
                       class="mt-1 h-10 block w-full border-2 border-black rounded-lg shadow-sm focus:border-Dark focus:ring pl-2"
                     />
                     <div
@@ -69,7 +74,7 @@
                     <label
                       class="block text-xl font-medium text-Dark mb-2"
                       for="level"
-                      >Level</label
+                      >Peran</label
                     >
                     <select
                       id="level"
@@ -100,15 +105,16 @@
                     <label
                       class="block text-xl font-medium text-Dark mb-2"
                       for="nickName"
-                      >Nick Name</label
+                      >Nama Panggilan</label
                     >
                     <input
                       id="nickName"
                       name="nickName"
                       type="text"
+                      required
                       v-model="form.nickName"
                       class="mt-1 h-10 block w-full border-2 border-black rounded-lg shadow-sm focus:border-Dark focus:ring pl-2"
-                      placeholder="Masukan Nick Name"
+                      placeholder="Masukan Nama Panggilan"
                     />
                     <div
                       v-if="formErrors.nickName"

@@ -17,6 +17,7 @@
 import More from "../components/More.vue";
 import PageContactMain from "../components/PageContactMain.vue";
 import WhatsAppChat from "../components/WhatsAppChat.vue";
+import Location from "../components/Location.vue";
 
 export default {
   name: "Home",

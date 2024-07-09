@@ -3,7 +3,7 @@
     <div class="flex justify-center">
       <div class="w-full max-w-lg">
         <div class="bg-Dark shadow-md rounded-lg p-6">
-          <h2 class="text-2xl font-bold mb-4 text-white">Add User</h2>
+          <h2 class="text-2xl font-bold mb-4 text-white">Tambah Pengguna</h2>
           <form @submit.prevent="onSubmit">
             <div class="mb-4">
               <label
@@ -27,7 +27,7 @@
               <label
                 class="block text-white text-sm font-bold mb-2"
                 for="nick_name"
-                >Nick Name</label
+                >Nama Panggilan</label
               >
               <input
                 v-model="form.nick_name"
@@ -35,7 +35,7 @@
                 class="shadow appearance-none border rounded w-full py-2 px-3 text-Dark leading-tight focus:outline-none focus:shadow-outline"
                 type="text"
                 id="nick_name"
-                placeholder="Nick Name"
+                placeholder="Masukan Nama Panggilan"
               />
               <p v-if="errors.nick_name" class="text-red-500 text-xs italic">
                 {{ errors.nick_name }}
@@ -52,7 +52,7 @@
                 class="shadow appearance-none border rounded w-full py-2 px-3 text-Dark leading-tight focus:outline-none focus:shadow-outline"
                 type="email"
                 id="email"
-                placeholder="Email"
+                placeholder="Masukan Email"
                 @blur="checkEmailExist"
               />
               <p v-if="errors.email" class="text-red-500 text-xs italic">
@@ -61,7 +61,7 @@
             </div>
             <div class="mb-4">
               <label class="block text-white text-sm font-bold mb-2" for="level"
-                >Role</label
+                >Peran</label
               >
               <select
                 v-model="form.level"
@@ -69,7 +69,7 @@
                 class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 font-semibold leading-tight focus:outline-none focus:shadow-outline"
                 id="level"
               >
-                <option value="" disabled class="text-Dark">Select Role</option>
+                <option value="" disabled class="text-Dark">Pilih Peran</option>
                 <option
                   v-for="level in levels"
                   :key="level"
@@ -85,7 +85,7 @@
             </div>
             <div class="mb-4">
               <label class="block text-white text-sm font-bold mb-2" for="level"
-                >Division</label
+                >Jabatan</label
               >
               <select
                 v-model="form.division"
@@ -94,7 +94,7 @@
                 id="division"
               >
                 <option value="" disabled class="text-Dark">
-                  Select Division
+                  Pilih Jabatan
                 </option>
                 <option
                   v-for="division in divisions"

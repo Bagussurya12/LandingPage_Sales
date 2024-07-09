@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="p-2 m-5">
     <div class="container mx-auto">
       <div class="flex justify-center max-w-full">
         <div class="flex flex-wrap md:flex-nowrap md:space-x-4">
@@ -16,7 +16,9 @@
               />
             </div>
             <div class="flex justify-center p-2">
-              <h3 class="text-4xl font-bold text-Dark">Sales Executive</h3>
+              <h3 class="text-2xl font-bold text-Dark">
+                {{ division }}
+              </h3>
             </div>
             <div class="flex justify-center mb-2">
               <h3 class="text-2xl font-semibold text-Hijau">@{{ nickName }}</h3>
@@ -312,6 +314,7 @@ export default {
       profile: {},
       nickName: "",
       userId: "",
+      division: "",
       photo: IbuImelda,
       defaultPhotos: defaultPhoto,
       sosmed: {},
@@ -330,6 +333,7 @@ export default {
       return {
         profile: response.profile,
         nickName: pengguna.user.nick_name,
+        division: pengguna.user.division,
         userId: pengguna.user.id,
       };
     } catch (error) {

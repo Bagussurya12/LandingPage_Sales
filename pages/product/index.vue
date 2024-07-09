@@ -8,7 +8,7 @@
         <input
           v-model="search"
           class="rounded border border-gray-400 px-3 py-1"
-          placeholder="Search"
+          placeholder="Cari Produk"
         />
       </div>
       <div class="my-3">
@@ -16,7 +16,7 @@
           <nav class="flex">
             <ol class="list-none p-0">
               <li class="inline-block">
-                <a href="#" class="text-dark font-bold text-4xl">Product</a>
+                <a href="#" class="text-dark font-bold text-4xl">Produk</a>
               </li>
             </ol>
           </nav>
@@ -24,7 +24,7 @@
             @click="goToAddProduct"
             class="bg-Hijau hover:bg-teal-950 text-white font-bold py-2 px-4 rounded"
           >
-            Add Product
+            Tambah Produk
           </button>
         </div>
         <table class="table-auto w-full my-4 border-b-4 rounded-xl">
@@ -33,7 +33,6 @@
               <th class="px-4 py-2">ID</th>
               <th class="px-4 py-2">Nama</th>
               <th class="px-4 py-2">Harga</th>
-              <th class="px-4 py-2">Tipe</th>
               <th class="px-4 py-2">Deskripsi</th>
               <th class="px-4 py-2">Spesifikasi</th>
               <th class="px-4 py-2">#</th>
@@ -44,7 +43,6 @@
               <td class="border px-4 py-2">{{ product.id }}</td>
               <td class="border px-4 py-2">{{ product.title }}</td>
               <td class="border px-4 py-2">{{ product.harga }}</td>
-              <td class="border px-4 py-2">{{ product.tipe_rumah }}</td>
               <td class="border px-4 py-2">{{ product.deskripsi }}</td>
               <td class="border px-4 py-2">{{ product.spesifikasi }}</td>
               <td class="border px-4 py-2">
@@ -52,7 +50,7 @@
                   @click="confirmDeleteProduct(product)"
                   class="bg-red-700 hover:bg-red-950 text-white font-bold py-1 px-2 rounded mx-2 my-2"
                 >
-                  Delete
+                  Hapus
                 </button>
                 <button
                   @click="getProductById(product.id)"

@@ -16,11 +16,12 @@
               v-for="(image, index) in images"
               :key="index"
               class="min-w-full relative"
+              s
             >
               <img
                 :src="image"
                 alt=""
-                class="w-full h-[600px] object-cover rounded-xl"
+                class="w-full h-[400px] lg:h-[600px] object-cover rounded-xl"
               />
             </div>
           </div>
